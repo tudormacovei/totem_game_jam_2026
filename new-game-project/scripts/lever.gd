@@ -13,7 +13,9 @@ var rot_speed := 0.2
 var rotating := false
 var last_mouse_pos := Vector2()
 var is_mouse_over := false
+var is_complete := false
 
+signal lever_completed
 
 func _ready() -> void:
 	normal_mat = mesh.get_active_material(0)
@@ -23,6 +25,9 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 
 func _input(event: InputEvent) -> void:
+	if is_complete:
+		return
+
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and is_mouse_over:
@@ -30,7 +35,7 @@ func _input(event: InputEvent) -> void:
 				last_mouse_pos = event.position
 			else:
 				if rotating:
-					print("Lever is in zone ", _get_current_zone())
+					_try_complete_lever()
 				
 				rotating = false
 				if not is_mouse_over:
@@ -42,10 +47,16 @@ func _input(event: InputEvent) -> void:
 		last_mouse_pos = event.position
 
 func _on_mouse_entered() -> void:
+	if is_complete:
+		return
+
 	is_mouse_over = true
 	mesh.set_surface_override_material(0, outline_mat)
 
 func _on_mouse_exited() -> void:
+	if is_complete:
+		return
+
 	is_mouse_over = false
 	if not rotating:
 		mesh.set_surface_override_material(0, normal_mat)
@@ -55,6 +66,18 @@ func _rotate_lever(delta_z: float):
 	rot.z += delta_z * rot_speed
 	rot.z = clamp(rot.z, -rot_max_z, rot_max_z)
 	rotation_degrees = rot
+
+func _try_complete_lever():
+	var zone = _get_current_zone()
+	if zone == 1 or zone == 3:
+		lever_completed.emit()
+		is_complete = true
+		mesh.set_surface_override_material(0, normal_mat)
+		print("Lever completed in zone %d" % zone)
+		return
+
+	print("Lever not completed, still in zone 2")
+					
 
 # Zones are calculated by dividing area (-rot_delta_max, rot_delta_max) into 3 equally sized zones
 # Zone 1 - Left, Zone 2 - Center, Zone 3 - Right
