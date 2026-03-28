@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://pbk0dioww4la"]
 
+[ext_resource type="PackedScene" uid="uid://bc1e88ae0byim" path="res://meshes/box.glb" id="1_7eprb"]
+[ext_resource type="PackedScene" uid="uid://c7jravxaswdm7" path="res://meshes/lever.glb" id="2_i4stu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
+size = Vector3(2.085, 7.8319507, 1)
+
 [node name="LeverScore" type="Node3D" unique_id=1795852748]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1446722553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3030587)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=191272888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3030587)
+
+[node name="box" parent="." unique_id=1294901784 instance=ExtResource("1_7eprb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32847685, 0, 0.101555705)
+
+[node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
+transform = Transform3D(0.9998693, 0.016167056, 0, -0.016167056, 0.9998693, 0, 0, 0, 1, 0, -0.13250852, 0.64178145)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverArea3D" unique_id=207235068]
+transform = Transform3D(1, -1.6950067e-07, 0, 1.6950067e-07, 1, 0, 0, 0, 1, -3.2782555e-07, 4.468712, 0)
+shape = SubResource("BoxShape3D_7eprb")
+
+[node name="LevelMesh" parent="LeverArea3D" unique_id=1468824399 instance=ExtResource("2_i4stu")]
