@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://c11g3uqlmsc0q"]
 
+[ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://pbk0dioww4la" path="res://scenes/lever_score.tscn" id="1_w2twt"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://cked633nor4ua" path="res://meshes/3d_ui/comments_button.glb" id="5_gubc5"]
 
 [sub_resource type="Curve" id="Curve_pw63i"]
 _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.51926976, 0.77171034), 1.3581973, 1.3581973, 0, 0, Vector2(1, 1), 0.025274547, 0.0, 0, 0]
@@ -20,3 +23,18 @@ animation_profile = SubResource("Curve_pw63i")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=469028228]
 transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.46650636, 3.7452376, 0, 0.7221513)
+
+[node name="3D_UI" type="Node3D" parent="." unique_id=287475942]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.5692897, 4.0451965, 0)
+
+[node name="like_button" parent="3D_UI" unique_id=1790393920 instance=ExtResource("1_pu3yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.108, 0)
+
+[node name="like_counter" parent="3D_UI" unique_id=1621794167 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -2.233, 0)
+
+[node name="comments_button" parent="3D_UI" unique_id=227107387 instance=ExtResource("5_gubc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
+
+[node name="comment_counter" parent="3D_UI" unique_id=1874110507 instance=ExtResource("3_7ykc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)

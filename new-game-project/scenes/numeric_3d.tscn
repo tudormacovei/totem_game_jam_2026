@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dc3plkxdj7tkg"]
+
+[ext_resource type="Script" uid="uid://d487vs5jgsfu" path="res://scripts/numeric_3d.gd" id="1_n8vd7"]
+[ext_resource type="PackedScene" uid="uid://wg08d2egmv4t" path="res://meshes/3d_ui/0.glb" id="2_8klq1"]
+[ext_resource type="PackedScene" uid="uid://cm0fakr5octbf" path="res://meshes/3d_ui/1.glb" id="3_1lsjk"]
+[ext_resource type="PackedScene" uid="uid://dab3u5xhnn7a0" path="res://meshes/3d_ui/2.glb" id="4_j3r53"]
+[ext_resource type="PackedScene" uid="uid://2um7snmx4drk" path="res://meshes/3d_ui/3.glb" id="5_gh48m"]
+[ext_resource type="PackedScene" uid="uid://mxwhv6r4i72" path="res://meshes/3d_ui/4.glb" id="6_f5jgp"]
+[ext_resource type="PackedScene" uid="uid://b7dmswcw2rdmj" path="res://meshes/3d_ui/5.glb" id="7_a4cvr"]
+[ext_resource type="PackedScene" uid="uid://dcjweuci3ubkf" path="res://meshes/3d_ui/6.glb" id="8_q6qjq"]
+[ext_resource type="PackedScene" uid="uid://dbt2gdfaocvmd" path="res://meshes/3d_ui/7.glb" id="9_40odr"]
+[ext_resource type="PackedScene" uid="uid://bkmpto5mnpo6u" path="res://meshes/3d_ui/8.glb" id="10_5tv8n"]
+[ext_resource type="PackedScene" uid="uid://svy03oke1ax8" path="res://meshes/3d_ui/9.glb" id="11_5ih22"]
+
+[node name="Numeric3d" type="Node3D" unique_id=1621794167]
+script = ExtResource("1_n8vd7")
+number_scenes = Array[PackedScene]([ExtResource("2_8klq1"), ExtResource("3_1lsjk"), ExtResource("4_j3r53"), ExtResource("5_gh48m"), ExtResource("6_f5jgp"), ExtResource("7_a4cvr"), ExtResource("8_q6qjq"), ExtResource("9_40odr"), ExtResource("10_5tv8n"), ExtResource("11_5ih22")])
