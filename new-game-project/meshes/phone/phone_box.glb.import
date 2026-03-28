@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bc1e88ae0byim"
-path="res://.godot/imported/box.glb-f80864a54e1c1e3f4497e7b35764c762.scn"
+uid="uid://doa03xmdh6s0v"
+path="res://.godot/imported/phone_box.glb-a940cd6a2d6fa5ab9b18eba0a246e465.scn"
 
 [deps]
 
-source_file="res://meshes/box.glb"
-dest_files=["res://.godot/imported/box.glb-f80864a54e1c1e3f4497e7b35764c762.scn"]
+source_file="res://meshes/phone/phone_box.glb"
+dest_files=["res://.godot/imported/phone_box.glb-a940cd6a2d6fa5ab9b18eba0a246e465.scn"]
 
 [params]
 

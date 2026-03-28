@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddkqfwviyksbd"
-path.s3tc="res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-05e317262a671c004dd248e88751ea7a.s3tc.ctex"
+uid="uid://bx0ctip35brjd"
+path="res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png-dec3e1eaf11b667855c6374f89f220e4.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "7f2ff6ecea85bd00bdcefe10530f5fda"
+"md5": "71dbad336121d81aa7fdfb09048b71ee"
 }
 
 [deps]
 
-source_file="res://meshes/lever_box_22_Metallic-box_22_Roughness.png"
-dest_files=["res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-05e317262a671c004dd248e88751ea7a.s3tc.ctex"]
+source_file="res://meshes/scene_penguin/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png"
+dest_files=["res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png-dec3e1eaf11b667855c6374f89f220e4.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

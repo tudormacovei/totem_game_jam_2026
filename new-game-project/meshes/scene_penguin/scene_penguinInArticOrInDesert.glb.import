@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7jravxaswdm7"
-path="res://.godot/imported/lever.glb-baba783d1b1c138c307e4f9bea20301f.scn"
+uid="uid://bv6jst0os1hio"
+path="res://.godot/imported/scene_penguinInArticOrInDesert.glb-a2862a57111ea83e34adea114c8695da.scn"
 
 [deps]
 
-source_file="res://meshes/lever.glb"
-dest_files=["res://.godot/imported/lever.glb-baba783d1b1c138c307e4f9bea20301f.scn"]
+source_file="res://meshes/scene_penguin/scene_penguinInArticOrInDesert.glb"
+dest_files=["res://.godot/imported/scene_penguinInArticOrInDesert.glb-a2862a57111ea83e34adea114c8695da.scn"]
 
 [params]
 
