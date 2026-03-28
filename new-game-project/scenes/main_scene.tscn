@@ -21,12 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://beekoaifu62yl" path="res://scenes/dioramas/water/water_indifferent.tscn" id="14_kkokr"]
 [ext_resource type="PackedScene" uid="uid://ccc5020e7d1jk" path="res://scenes/dioramas/water/water_medium.tscn" id="15_lhwp2"]
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
+[ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 
 [sub_resource type="Curve" id="Curve_pw63i"]
 _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.51926976, 0.77171034), 1.3581973, 1.3581973, 0, 0, Vector2(1, 1), 0.025274547, 0.0, 0, 0]
 point_count = 3
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c16ls"]
 
 [node name="MainScene" type="Node3D" unique_id=461440506]
 
@@ -39,9 +38,6 @@ script = ExtResource("2_pw63i")
 diorama_scenes = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("3_rt2n2"), ExtResource("3_xdqt8"), ExtResource("4_adb74"), ExtResource("5_58gk3"), ExtResource("6_to7gp"), ExtResource("7_u0fll"), ExtResource("8_6p3nn"), ExtResource("9_k67gn"), ExtResource("10_k3g67"), ExtResource("11_4bgka"), ExtResource("12_02d50"), ExtResource("13_pgk25"), ExtResource("14_kkokr"), ExtResource("15_lhwp2"), ExtResource("16_l40q6")])
 animation_profile = SubResource("Curve_pw63i")
 PAUSE_TIME = 8.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=469028228]
-transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.46650636, 3.7452376, 0, 0.7221513)
 
 [node name="3D_UI" type="Node3D" parent="." unique_id=287475942]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.781755, 4.5862656, 0.5474062)
@@ -65,4 +61,15 @@ general_pool = ExtResource("7_c16ls")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1721789139]
 transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6415234, 4.910984)
-texture = SubResource("CompressedTexture2D_c16ls")
+texture = ExtResource("22_adb74")
+
+[node name="Lighting" type="Node" parent="." unique_id=970490024]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=469028228]
+transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.4665064, 3.7452376, 0, 0.7221513)
+light_energy = 2.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lighting" unique_id=1659287130]
+transform = Transform3D(0.081849545, 0.66864574, -0.73906267, -0.8913302, 0.38088444, 0.24588141, 0.44590503, 0.63862354, 0.62715924, 3.7452376, 0, 0.7221513)
+light_color = Color(0.8745098, 1, 1, 1)
+light_energy = 0.5
