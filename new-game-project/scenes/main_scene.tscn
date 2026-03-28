@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c11g3uqlmsc0q"]
+
+[ext_resource type="PackedScene" uid="uid://pbk0dioww4la" path="res://scenes/lever_score.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
+
+[node name="MainScene" type="Node3D" unique_id=461440506]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=803760411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.213602)
+fov = 60.0
+
+[node name="Autoscroller" type="Node" parent="." unique_id=624474803]
+script = ExtResource("2_pw63i")
+diorama_scene = ExtResource("1_w2twt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=469028228]
+transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.46650636, 3.7452376, 0, 0.7221513)
