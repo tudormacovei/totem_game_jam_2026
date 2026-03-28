@@ -1,0 +1,66 @@
+extends Node3D
+
+@export var general_pool: CommentPool
+@export var cooldown_seconds := 3 # How long to wait before using a comment again
+@export var comment_rate_seconds := 5 # How often comments show up
+
+#TODO: Needs balancing
+var SCORE_TO_TIER_DICT := {
+	5: 1, # Tier 1: 0-5 points
+	10: 2, # Tier 2: 6-10 points
+	15: 3, # Tier 3: 11-15 points
+}
+
+var last_used := {} # Key: comment string, Value: timestamp
+
+func _process(_delta: float) -> void:
+	randomize()
+	var intensities = ["low", "medium", "high"] # TODO: Tie to intensity of lever scenario
+	var rand_intensity = intensities[randi() % intensities.size()]
+
+	var now := Time.get_unix_time_from_system()
+	var last_time = - comment_rate_seconds if last_used.size() == 0 else last_used.values().max()
+	if now - last_time >= comment_rate_seconds + randf() * comment_rate_seconds:
+		var score = GameManager.get_current_score()
+		var tier = _get_tier(score)
+		var comment = get_general_comment(rand_intensity, tier)
+		print("Comment for intesity %s tier %d: %s" % [rand_intensity, tier, comment])
+
+# Returns a random comment. Cooldown is applied.
+func get_general_comment(intensity: String, tier: int) -> String:
+	var bucket = null
+	match intensity:
+		"low":
+			bucket = general_pool.low_intensity
+		"medium":
+			bucket = general_pool.medium_intensity
+		"high":
+			bucket = general_pool.high_intensity
+		_:
+			return ""
+
+	if not bucket.has(tier):
+		return ""
+
+	var list = bucket[tier]
+	if list.is_empty():
+		return ""
+
+	var now := Time.get_unix_time_from_system()
+	var available := []
+	for c in list:
+		if not last_used.has(c) or now - last_used[c] >= cooldown_seconds:
+			available.append(c)
+
+	if available.is_empty():
+		available = list.duplicate()
+
+	var chosen: String = available[randi() % available.size()]
+	last_used[chosen] = now
+	return chosen
+
+func _get_tier(score: int) -> int:
+	for i in SCORE_TO_TIER_DICT:
+		if score <= i:
+			return SCORE_TO_TIER_DICT[i]
+	return 3

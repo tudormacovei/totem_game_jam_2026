@@ -1,7 +1,6 @@
 extends Node
 
 var SCORE_PER_LEVER = 1 # How many points are awarded for completing a scenario?
-
 var score_total := 0
 
 func on_lever_completed(zone_positivity: bool) -> void:
@@ -16,3 +15,6 @@ func get_current_like_amount() -> int:
 # placeholder
 func get_current_comment_amount() -> int:
 	return int(max(score_total, 0))
+
+func get_current_score() -> int:
+	return score_total

@@ -1,7 +1,7 @@
 class_name numeric_3d extends Node3D
 
 @export var number_scenes: Array[PackedScene]
-@export var  tracking_likes: bool = false
+@export var tracking_likes: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,10 +28,8 @@ func show_number(num: int) -> void:
 	var pos := Vector3(0, 0, 0)
 
 	for c in num_str:
-		print(c)
 		if int(c) not in range(10):
 			continue
-		print("Spawning obj!")
 		var num_obj = number_scenes[int(c)].instantiate() as Node3D
 		add_child(num_obj)
 		num_obj.position = pos

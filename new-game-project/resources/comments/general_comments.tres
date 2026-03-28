@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CommentPool" format=3 uid="uid://dufsi4kjgsrnh"]
+
+[ext_resource type="Script" uid="uid://c2t4f0fnhe83e" path="res://scripts/comment_pool_general.gd" id="1_fl4el"]
+
+[resource]
+script = ExtResource("1_fl4el")
+low_intensity = {
+1: ["Low 1", "Low 1.2"],
+2: ["Low 2", "Low 2.2"],
+3: ["Low 3", "Low 3.2"]
+}
+medium_intensity = {
+1: ["Med 1", "Med 1.2"],
+2: ["Med 2", "Med 2.2"],
+3: ["Med 3", "Med 3.2"]
+}
+high_intensity = {
+1: ["Hi 1", "Hi 1.2"],
+2: ["Hi 2", "Hi 2.2"],
+3: ["Hi 3", "Hi 3.2"]
+}
+metadata/_custom_type_script = "uid://c2t4f0fnhe83e"

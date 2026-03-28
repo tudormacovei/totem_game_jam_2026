@@ -3,7 +3,7 @@ extends Area3D
 @export var is_left_zone_positive := true
 @export var is_useless_scenario := false
 
-@onready var snap_to_completion_curve: Curve = preload("res://curves/anim_lever_snap_curve.tres")
+@onready var snap_to_completion_curve: Curve = preload("res://resources/curves/anim_lever_snap_curve.tres")
 @onready var mesh: MeshInstance3D = $LeverMesh/box_22
 
 var normal_mat: Material
