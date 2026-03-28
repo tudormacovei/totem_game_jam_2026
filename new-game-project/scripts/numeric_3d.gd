@@ -1,6 +1,7 @@
 class_name numeric_3d extends Node3D
 
 @export var number_scenes: Array[PackedScene]
+@export var  tracking_likes: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +9,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if tracking_likes:
+		show_number(GameManager.get_current_like_amount())
+	else:
+		show_number(GameManager.get_current_comment_amount())
 
 
 func test_numbers() -> void:

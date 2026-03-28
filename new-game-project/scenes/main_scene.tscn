@@ -32,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.108, 0)
 
 [node name="like_counter" parent="3D_UI" unique_id=1621794167 instance=ExtResource("3_7ykc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -2.233, 0)
+tracking_likes = true
 
 [node name="comments_button" parent="3D_UI" unique_id=227107387 instance=ExtResource("5_gubc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
