@@ -7,7 +7,7 @@ extends Area3D
 @onready var mesh: MeshInstance3D = $LeverMesh/box_22
 
 var normal_mat: Material
-var outline_mat: Material
+var outline_mat: Material = preload("res://materials/outline.tres")
 
 # Configuration variables
 var ROT_MAX_Z := 19.0
@@ -32,7 +32,6 @@ var is_playing_snap_anim := false
 
 func _ready() -> void:
 	normal_mat = mesh.get_active_material(0)
-	outline_mat = preload("res://materials/outline.tres")
 
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
