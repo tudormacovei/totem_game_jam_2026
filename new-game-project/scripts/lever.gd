@@ -6,7 +6,6 @@ var normal_mat: Material
 var outline_mat: Material
 
 # Rotation configuration
-var rot_min_z := -15.0
 var rot_max_z := 15.0
 var rot_speed := 0.2
 
@@ -14,6 +13,7 @@ var rot_speed := 0.2
 var rotating := false
 var last_mouse_pos := Vector2()
 var is_mouse_over := false
+
 
 func _ready() -> void:
 	normal_mat = mesh.get_active_material(0)
@@ -29,13 +29,16 @@ func _input(event: InputEvent) -> void:
 				rotating = true
 				last_mouse_pos = event.position
 			else:
+				if rotating:
+					print("Lever is in zone ", _get_current_zone())
+				
 				rotating = false
 				if not is_mouse_over:
 					mesh.set_surface_override_material(0, normal_mat)
 				
 	if event is InputEventMouseMotion and rotating:
 		var delta = event.position - last_mouse_pos
-		rotate_lever(-delta.x)
+		_rotate_lever(delta.x)
 		last_mouse_pos = event.position
 
 func _on_mouse_entered() -> void:
@@ -47,8 +50,22 @@ func _on_mouse_exited() -> void:
 	if not rotating:
 		mesh.set_surface_override_material(0, normal_mat)
 
-func rotate_lever(delta_z: float):
+func _rotate_lever(delta_z: float):
 	var rot = rotation_degrees
 	rot.z += delta_z * rot_speed
-	rot.z = clamp(rot.z, rot_min_z, rot_max_z)
+	rot.z = clamp(rot.z, -rot_max_z, rot_max_z)
 	rotation_degrees = rot
+
+# Zones are calculated by dividing area (-rot_delta_max, rot_delta_max) into 3 equally sized zones
+# Zone 1 - Left, Zone 2 - Center, Zone 3 - Right
+func _get_current_zone() -> int:
+	var z = rotation_degrees.z
+	var z1 = - rot_max_z / 3.0
+	var z2 = rot_max_z / 3.0
+
+	if z < z1:
+		return 1
+	elif z < z2:
+		return 2
+	else:
+		return 3
