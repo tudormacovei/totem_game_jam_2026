@@ -1,8 +1,9 @@
 extends Node
 
 @export var diorama_scenes: Array[PackedScene]
+@export var animation_profile: Curve
 
-var SCROLL_TIME = 2.0
+var SCROLL_TIME = 1.5
 var PAUSE_TIME = 3.0
 
 enum ScrollState{
@@ -70,7 +71,7 @@ func _cleanup_diorama_stack() -> void:
 			i += 1
 
 func _get_offset(x) -> float:
-	return x * diorama_scene_height
+	return animation_profile.sample(x) * diorama_scene_height
 
 func _animate_scroll(delta_time) -> void:
 	var x = clamp(_time_in_current_state / SCROLL_TIME, 0.0, 1.0)
