@@ -30,7 +30,8 @@ func _input(event: InputEvent) -> void:
 				last_mouse_pos = event.position
 			else:
 				rotating = false
-				mesh.set_surface_override_material(0, normal_mat)
+				if not is_mouse_over:
+					mesh.set_surface_override_material(0, normal_mat)
 				
 	if event is InputEventMouseMotion and rotating:
 		var delta = event.position - last_mouse_pos
