@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var is_left_zone_positive := true
-@export var is_useless_scenario := false
+@export var intensity: GameManager.Intensity = GameManager.Intensity.LOW
 
 @onready var snap_to_completion_curve: Curve = preload("res://resources/curves/anim_lever_snap_curve.tres")
 @onready var mesh: MeshInstance3D = $LeverMesh/box_22
@@ -61,6 +61,7 @@ func _input(event: InputEvent) -> void:
 			if event.pressed and is_mouse_over:
 				rotating = true
 				last_mouse_pos = event.position
+				GameManager.update_intensity(intensity)
 			else:
 				if rotating:
 					_try_complete_lever()

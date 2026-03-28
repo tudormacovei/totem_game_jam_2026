@@ -15,26 +15,25 @@ var last_used := {} # Key: comment string, Value: timestamp
 
 func _process(_delta: float) -> void:
 	randomize()
-	var intensities = ["low", "medium", "high"] # TODO: Tie to intensity of lever scenario
-	var rand_intensity = intensities[randi() % intensities.size()]
 
 	var now := Time.get_unix_time_from_system()
 	var last_time = - comment_rate_seconds if last_used.size() == 0 else last_used.values().max()
 	if now - last_time >= comment_rate_seconds + randf() * comment_rate_seconds:
+		var intensity = GameManager.get_current_intensity()
 		var score = GameManager.get_current_score()
 		var tier = _get_tier(score)
-		var comment = get_general_comment(rand_intensity, tier)
-		print("Comment for intesity %s tier %d: %s" % [rand_intensity, tier, comment])
+		var comment = get_general_comment(intensity, tier)
+		print("Comment for intesity %s tier %d: %s" % [intensity, tier, comment])
 
 # Returns a random comment. Cooldown is applied.
-func get_general_comment(intensity: String, tier: int) -> String:
+func get_general_comment(intensity: GameManager.Intensity, tier: int) -> String:
 	var bucket = null
 	match intensity:
-		"low":
+		GameManager.Intensity.LOW:
 			bucket = general_pool.low_intensity
-		"medium":
+		GameManager.Intensity.MEDIUM:
 			bucket = general_pool.medium_intensity
-		"high":
+		GameManager.Intensity.HIGH:
 			bucket = general_pool.high_intensity
 		_:
 			return ""

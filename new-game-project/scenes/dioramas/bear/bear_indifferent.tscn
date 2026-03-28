@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c00evs34iibob"]
 
-[ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_i4u8l"]
+[ext_resource type="Script" path="res://scenes/lever_score.gd" id="1_i4u8l"]
 [ext_resource type="PackedScene" uid="uid://ca37ddhbhvgiw" path="res://meshes/backgrounds/scene_artic.glb" id="2_x5e7q"]
 [ext_resource type="PackedScene" uid="uid://bcg5dmxfhw74n" path="res://meshes/backgrounds/scene_bird_on_a_plate.glb" id="3_opd3p"]
 [ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="4_vyrvd"]
@@ -23,6 +23,7 @@ background_right = ExtResource("3_opd3p")
 [node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)
 script = ExtResource("5_78vsu")
+intensity = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeverArea3D" unique_id=207235068]
 transform = Transform3D(1, -1.6950067e-07, 0, 1.6950067e-07, 1, 0, 0, 0, 1, -3.2782555e-07, 4.468712, 0)

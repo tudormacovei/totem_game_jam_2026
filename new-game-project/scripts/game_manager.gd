@@ -1,7 +1,17 @@
 extends Node
 
+enum Intensity {
+	LOW,
+	MEDIUM,
+	HIGH
+}
+
 var SCORE_PER_LEVER = 1 # How many points are awarded for completing a scenario?
 var score_total := 0
+var current_intensity := Intensity.LOW
+
+func update_intensity(intensity: Intensity) -> void:
+	current_intensity = intensity
 
 func on_lever_completed(zone_positivity: bool) -> void:
 	# TODO: Implement usless scenarios
@@ -18,3 +28,6 @@ func get_current_comment_amount() -> int:
 
 func get_current_score() -> int:
 	return score_total
+
+func get_current_intensity() -> GameManager.Intensity:
+	return current_intensity
