@@ -1,13 +1,16 @@
 extends Area3D
 
+@export var is_left_zone_positive := true
+@export var is_useless_scenario := false
 @onready var mesh: MeshInstance3D = $LeverMesh/box_22
 
 var normal_mat: Material
 var outline_mat: Material
 
 # Rotation configuration
-var rot_max_z := 15.0
-var rot_speed := 0.2
+var ROT_MAX_Z := 15.0
+var ROT_SPEED := 0.2
+var zone_to_positivity_dict := {} # Populated at runtime based on is_left_zone_positive
 
 # State variables
 var rotating := false
@@ -15,7 +18,7 @@ var last_mouse_pos := Vector2()
 var is_mouse_over := false
 var is_complete := false
 
-signal lever_completed
+# Zones: 1 - Left, 2 - Center, 3 - Right
 
 func _ready() -> void:
 	normal_mat = mesh.get_active_material(0)
@@ -23,6 +26,9 @@ func _ready() -> void:
 
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+
+	zone_to_positivity_dict[1] = is_left_zone_positive
+	zone_to_positivity_dict[3] = not is_left_zone_positive
 
 func _input(event: InputEvent) -> void:
 	if is_complete:
@@ -63,17 +69,18 @@ func _on_mouse_exited() -> void:
 
 func _rotate_lever(delta_z: float):
 	var rot = rotation_degrees
-	rot.z += delta_z * rot_speed
-	rot.z = clamp(rot.z, -rot_max_z, rot_max_z)
+	rot.z += delta_z * ROT_SPEED
+	rot.z = clamp(rot.z, -ROT_MAX_Z, ROT_MAX_Z)
 	rotation_degrees = rot
 
 func _try_complete_lever():
 	var zone = _get_current_zone()
+
 	if zone == 1 or zone == 3:
-		lever_completed.emit()
+		GameManager.on_lever_completed(zone_to_positivity_dict[zone])
 		is_complete = true
 		mesh.set_surface_override_material(0, normal_mat)
-		print("Lever completed in zone %d" % zone)
+		# TODO: Snap to the end of the zone
 		return
 
 	print("Lever not completed, still in zone 2")
@@ -83,8 +90,8 @@ func _try_complete_lever():
 # Zone 1 - Left, Zone 2 - Center, Zone 3 - Right
 func _get_current_zone() -> int:
 	var z = rotation_degrees.z
-	var z1 = - rot_max_z / 3.0
-	var z2 = rot_max_z / 3.0
+	var z1 = - ROT_MAX_Z / 3.0
+	var z2 = ROT_MAX_Z / 3.0
 
 	if z < z1:
 		return 1
