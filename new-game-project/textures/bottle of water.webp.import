@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx0ctip35brjd"
-path="res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png-dec3e1eaf11b667855c6374f89f220e4.ctex"
+uid="uid://bfrmfijiybbh2"
+path="res://.godot/imported/bottle of water.webp-b11d2cb60df194508b6dfd66055df94a.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "71dbad336121d81aa7fdfb09048b71ee"
 }
 
 [deps]
 
-source_file="res://meshes/scene_penguin/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png"
-dest_files=["res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Color.png-dec3e1eaf11b667855c6374f89f220e4.ctex"]
+source_file="res://textures/bottle of water.webp"
+dest_files=["res://.godot/imported/bottle of water.webp-b11d2cb60df194508b6dfd66055df94a.ctex"]
 
 [params]
 
@@ -40,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

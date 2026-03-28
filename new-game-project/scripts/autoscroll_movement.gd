@@ -14,7 +14,7 @@ enum ScrollState{
 var _state : ScrollState
 var _time_in_current_state : float
 
-var diorama_scene_height = 13.0
+var diorama_scene_height = 12.6
 
 var loaded_dioramas: Array[Node3D] = []
 var next_diorama_index : int = 0
@@ -58,6 +58,7 @@ func _add_diorama() -> void:
 	
 	diorama_node.global_position = top_position + Vector3(0, diorama_scene_height, 0)
 	loaded_dioramas.append(diorama_node)
+	next_diorama_index += 1
 
 # frees diorama objects below camera view
 func _cleanup_diorama_stack() -> void:

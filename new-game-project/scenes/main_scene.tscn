@@ -4,28 +4,32 @@
 [ext_resource type="PackedScene" uid="uid://pbk0dioww4la" path="res://scenes/lever_score.tscn" id="1_w2twt"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://c00evs34iibob" path="res://scenes/dioramas/bear/bear_indifferent.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://cked633nor4ua" path="res://meshes/3d_ui/comments_button.glb" id="5_gubc5"]
 
 [sub_resource type="Curve" id="Curve_pw63i"]
 _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.51926976, 0.77171034), 1.3581973, 1.3581973, 0, 0, Vector2(1, 1), 0.025274547, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c16ls"]
+load_path = "res://.godot/imported/phone.webp-64339e9a823f21cef6bbe09f791ac3d3.s3tc.ctex"
+
 [node name="MainScene" type="Node3D" unique_id=461440506]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=803760411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 14.836119)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 13.575236)
 fov = 60.0
 
 [node name="Autoscroller" type="Node" parent="." unique_id=624474803]
 script = ExtResource("2_pw63i")
-diorama_scenes = Array[PackedScene]([ExtResource("1_w2twt"), ExtResource("1_w2twt"), ExtResource("1_w2twt")])
+diorama_scenes = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("1_w2twt"), ExtResource("3_rt2n2")])
 animation_profile = SubResource("Curve_pw63i")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=469028228]
 transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.46650636, 3.7452376, 0, 0.7221513)
 
 [node name="3D_UI" type="Node3D" parent="." unique_id=287475942]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.5692897, 4.0451965, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.781755, 4.5862656, 0.5474062)
 
 [node name="like_button" parent="3D_UI" unique_id=1790393920 instance=ExtResource("1_pu3yx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.108, 0)
@@ -39,3 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
 
 [node name="comment_counter" parent="3D_UI" unique_id=1874110507 instance=ExtResource("3_7ykc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1721789139]
+transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6415234, 4.910984)
+texture = SubResource("CompressedTexture2D_c16ls")

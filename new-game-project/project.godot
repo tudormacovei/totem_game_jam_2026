@@ -24,7 +24,8 @@ GameManager="*uid://cgqbk0pn6ppom"
 folder_colors={
 "res://meshes/": "purple",
 "res://scenes/": "green",
-"res://scripts/": "blue"
+"res://scripts/": "blue",
+"res://textures/": "yellow"
 }
 
 [physics]

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcqvpo44cejuv"
-path.s3tc="res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Metallic-scene_penguinInArticOrInDesert_11Set_Roughness.png-25795f82fbf673c46c60d56ccb663371.s3tc.ctex"
+uid="uid://ddipk2r1diojm"
+path.s3tc="res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "f38abea9193f9191c7cb626a6a001473"
-}
 
 [deps]
 
-source_file="res://meshes/scene_penguin/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Metallic-scene_penguinInArticOrInDesert_11Set_Roughness.png"
-dest_files=["res://.godot/imported/scene_penguinInArticOrInDesert_scene_penguinInArticOrInDesert_11Set_Metallic-scene_penguinInArticOrInDesert_11Set_Roughness.png-25795f82fbf673c46c60d56ccb663371.s3tc.ctex"]
+source_file="res://meshes/backgrounds/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png"
+dest_files=["res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.s3tc.ctex"]
 
 [params]
 

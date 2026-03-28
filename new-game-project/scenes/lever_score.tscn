@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://pbk0dioww4la"]
 
+[ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_1pxa3"]
 [ext_resource type="Script" uid="uid://r2uqux5r88vc" path="res://scripts/lever.gd" id="1_fg3l8"]
 [ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="1_onoev"]
-[ext_resource type="PackedScene" uid="uid://bv6jst0os1hio" path="res://meshes/scene_penguin/scene_penguinInArticOrInDesert.glb" id="2_opv0m"]
 [ext_resource type="PackedScene" uid="uid://qb88boj5jjb6" path="res://meshes/lever/lever.glb" id="4_1pxa3"]
+[ext_resource type="PackedScene" uid="uid://ca37ddhbhvgiw" path="res://meshes/backgrounds/scene_artic.glb" id="5_xnj4h"]
+[ext_resource type="PackedScene" uid="uid://bcg5dmxfhw74n" path="res://meshes/backgrounds/scene_bird_on_a_plate.glb" id="6_b1g8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
 size = Vector3(2.085, 7.8319507, 1)
 
 [node name="LeverScore" type="Node3D" unique_id=1795852748]
+script = ExtResource("1_1pxa3")
+background_left = ExtResource("5_xnj4h")
+background_right = ExtResource("6_b1g8e")
 
 [node name="phone_box" parent="." unique_id=1580715568 instance=ExtResource("1_onoev")]
-
-[node name="scene_penguinInArticOrInDesert" parent="phone_box" unique_id=1633355025 instance=ExtResource("2_opv0m")]
 
 [node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)
@@ -23,7 +26,3 @@ transform = Transform3D(1, -1.6950067e-07, 0, 1.6950067e-07, 1, 0, 0, 0, 1, -3.2
 shape = SubResource("BoxShape3D_7eprb")
 
 [node name="LeverMesh" parent="LeverArea3D" unique_id=369620874 instance=ExtResource("4_1pxa3")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1495102376]
-transform = Transform3D(0.8800545, -0.3320278, 0.33950222, 0.3205429, 0.94283617, 0.09117046, -0.35036606, 0.028590083, 0.9361763, -6.4903946, 10.93663, 9.024452)
-light_energy = 0.707
