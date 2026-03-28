@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://decgp71qntyr1"]
+
+[ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_qxjbd"]
+[ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="2_aulpn"]
+[ext_resource type="PackedScene" uid="uid://dfhlnma3678dx" path="res://meshes/backgrounds/scene_factory.glb" id="2_qxjbd"]
+[ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="4_6v86x"]
+[ext_resource type="Script" uid="uid://r2uqux5r88vc" path="res://scripts/lever.gd" id="5_xstoq"]
+[ext_resource type="PackedScene" uid="uid://qb88boj5jjb6" path="res://meshes/lever/lever.glb" id="6_u156n"]
+[ext_resource type="Texture2D" uid="uid://ba7el6asifhcp" path="res://textures/bear normal.webp" id="7_wosmb"]
+[ext_resource type="Texture2D" uid="uid://dbq6jusmbsin4" path="res://textures/honey.webp" id="8_aulpn"]
+[ext_resource type="Texture2D" uid="uid://b1jogr34a60rl" path="res://textures/poision1.png" id="9_5inub"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
+size = Vector3(2.085, 7.8319507, 1)
+
+[node name="LeverScore" type="Node3D" unique_id=1795852748]
+script = ExtResource("1_qxjbd")
+background_left = ExtResource("2_qxjbd")
+background_right = ExtResource("2_aulpn")
+
+[node name="phone_box" parent="." unique_id=1580715568 instance=ExtResource("4_6v86x")]
+
+[node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)
+script = ExtResource("5_xstoq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverArea3D" unique_id=207235068]
+transform = Transform3D(1, -1.6950067e-07, 0, 1.6950067e-07, 1, 0, 0, 0, 1, -3.2782555e-07, 4.468712, 0)
+shape = SubResource("BoxShape3D_7eprb")
+
+[node name="LeverMesh" parent="LeverArea3D" unique_id=369620874 instance=ExtResource("6_u156n")]
+
+[node name="lever_sprite" type="Sprite3D" parent="LeverArea3D" unique_id=1860565248]
+transform = Transform3D(-0.25, 0, -1.2577951e-07, 0, 0.25, 0, 3.774895e-08, 0, -0.833, -6.358924e-08, 7.0541916, -0.72737634)
+texture = ExtResource("7_wosmb")
+
+[node name="right_sprite" type="Sprite3D" parent="." unique_id=219881718]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.8764423, 9.479885, 0)
+texture = ExtResource("8_aulpn")
+
+[node name="left_sprite" type="Sprite3D" parent="." unique_id=737749873]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.724067, 9.27782, 0)
+texture = ExtResource("9_5inub")

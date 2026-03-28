@@ -3,8 +3,8 @@ extends Node
 @export var diorama_scenes: Array[PackedScene]
 @export var animation_profile: Curve
 
-var SCROLL_TIME = 1.5
-var PAUSE_TIME = 3.0
+@export var SCROLL_TIME = 1.5
+@export var PAUSE_TIME = 3.0
 
 enum ScrollState{
 	PAUSED,

@@ -24,6 +24,7 @@ GameManager="*uid://cgqbk0pn6ppom"
 folder_colors={
 "res://meshes/": "purple",
 "res://scenes/": "green",
+"res://scenes/dioramas/goose/": "red",
 "res://scripts/": "blue",
 "res://textures/": "yellow"
 }
