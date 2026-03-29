@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ct6pe1eja56cl" path="res://textures/phone_background_full.png" id="2_tqrak"]
 [ext_resource type="AudioStream" uid="uid://bjd2nu061gikh" path="res://audio/sfx/subway_ambiance.mp3" id="3_bjp3d"]
 [ext_resource type="Texture2D" uid="uid://c86j8is3052b8" path="res://textures/screens/game_over_screen.png" id="3_c6nph"]
-[ext_resource type="AudioStream" uid="uid://d304mp56f840s" path="res://audio/sfx/penguin_onAStick.mp3" id="3_tqrak"]
+[ext_resource type="AudioStream" uid="uid://ca3i2emvclda4" path="res://audio/music/penguin_extreme.mp3" id="4_bjp3d"]
 
 [node name="GameStart" type="Node2D" unique_id=2082934740]
 script = ExtResource("1_hr20t")
@@ -24,16 +24,16 @@ color = Color(0, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 8.740742)
 fov = 80.0
 
+[node name="Overlay" type="Sprite3D" parent="." unique_id=416792251]
+transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.9600005, 0, 6.642, -15.739964)
+texture = ExtResource("3_c6nph")
+
 [node name="Background" type="Sprite3D" parent="." unique_id=1942715463]
 transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.739964)
 texture = ExtResource("2_tqrak")
 
-[node name="Overlay" type="Sprite3D" parent="." unique_id=416792251]
-transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.739964)
-texture = ExtResource("3_c6nph")
-
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=738998510]
-stream = ExtResource("3_tqrak")
+stream = ExtResource("4_bjp3d")
 autoplay = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=455397005]
