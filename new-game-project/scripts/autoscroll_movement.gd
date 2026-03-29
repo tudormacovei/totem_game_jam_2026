@@ -3,8 +3,8 @@ extends Node
 @export var diorama_scenes: Array[PackedScene]
 @export var animation_profile: Curve
 
-var SCROLL_TIME = 1.5
-var PAUSE_TIME = 3.0
+var SCROLL_TIME = 1.0
+var PAUSE_TIME = 10.0
 
 enum ScrollState{
 	PAUSED,
@@ -21,7 +21,7 @@ var next_diorama_index : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_add_diorama()
+	GameManager.lever_completed.connect(_on_lever_completed)
 	_add_diorama()
 	_state = ScrollState.PAUSED
 	_time_in_current_state = 0.0
@@ -31,11 +31,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_time_in_current_state += delta
 	if _state == ScrollState.SCROLLING and _time_in_current_state > SCROLL_TIME:
+		print("Starting PAUSE")
 		_animate_scroll(delta)
 		_state = ScrollState.PAUSED
 		_time_in_current_state = _time_in_current_state - SCROLL_TIME
 
 	elif _state == ScrollState.PAUSED and _time_in_current_state > PAUSE_TIME:
+		print("Starting SCROLL")
 		_state = ScrollState.SCROLLING
 		_time_in_current_state = _time_in_current_state - PAUSE_TIME
 		_add_diorama()
@@ -83,3 +85,9 @@ func _animate_scroll(delta_time) -> void:
 		diorama_obj.global_position.y += delta_offset
 	
 	_cleanup_diorama_stack()
+	
+func _on_lever_completed() -> void:
+	print("AUTOSCROLL ON LEVER COMPLETED!")
+	_state = ScrollState.SCROLLING
+	_time_in_current_state = 0.0
+	_add_diorama()
