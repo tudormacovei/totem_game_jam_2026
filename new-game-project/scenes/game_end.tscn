@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c86j8is3052b8" path="res://textures/screens/game_over_screen.png" id="3_c6nph"]
 [ext_resource type="AudioStream" uid="uid://ca3i2emvclda4" path="res://audio/music/penguin_extreme.mp3" id="4_bjp3d"]
 
-[node name="GameStart" type="Node2D" unique_id=2082934740]
+[node name="GameStart" type="Node2D" unique_id=2082934740 node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_hr20t")
 transition_delay = 10.0
+audio_player = NodePath("AudioStreamPlayer3D2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1153722354]
 

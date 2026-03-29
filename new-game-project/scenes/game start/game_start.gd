@@ -3,6 +3,7 @@ extends Node2D
 @export var transition_delay: float = 3.0
 @export var fade_duration: float = 1.0
 @export var target_scene: PackedScene
+@export var audio_player: Node
 
 @onready var fade_rect: ColorRect = $CanvasLayer/ColorRect
 
@@ -15,6 +16,8 @@ func _ready() -> void:
 	await get_tree().create_timer(transition_delay).timeout
 
 	var fade_out_tween = create_tween()
+	if audio_player != null and audio_player.get("volume_db") != null:
+		fade_out_tween.parallel().tween_property(audio_player, "volume_db", -80.0, fade_duration)
 	fade_out_tween.tween_property(fade_rect, "modulate:a", 1.0, fade_duration)
 	await fade_out_tween.finished
 

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jkmw5yp2ohpc"]
+
+[ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_fqm4v"]
+[ext_resource type="PackedScene" uid="uid://d3d7tgy2kake1" path="res://meshes/backgrounds/scene_penguin.glb" id="2_fqm4v"]
+[ext_resource type="PackedScene" uid="uid://ca37ddhbhvgiw" path="res://meshes/backgrounds/scene_artic.glb" id="3_ol4jh"]
+[ext_resource type="AudioStream" uid="uid://c6b03ppp78vlm" path="res://audio/music/penguin_extreme2.mp3" id="4_2221s"]
+[ext_resource type="AudioStream" uid="uid://d304mp56f840s" path="res://audio/sfx/penguin_onAStick.mp3" id="5_44boq"]
+[ext_resource type="AudioStream" uid="uid://c475qf3n5duds" path="res://audio/sfx/penguin_artic.mp3" id="6_vyl5d"]
+[ext_resource type="Texture2D" uid="uid://o6atrcbj5v8v" path="res://textures/penguin.png" id="7_tvig3"]
+[ext_resource type="Texture2D" uid="uid://bnl2g0wjhcqku" path="res://textures/sushi.webp" id="8_fqm4v"]
+
+[node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_fqm4v")]
+background_left = ExtResource("2_fqm4v")
+background_right = ExtResource("3_ol4jh")
+music = ExtResource("4_2221s")
+left_sound = ExtResource("5_44boq")
+right_sound = ExtResource("6_vyl5d")
+
+[node name="LeverArea3D" parent="." index="0" unique_id=1641671795]
+is_left_zone_positive = false
+
+[node name="lever_sprite" parent="LeverArea3D" index="2" unique_id=1860565248]
+texture = ExtResource("7_tvig3")
+
+[node name="left_sprite" parent="." index="1" unique_id=1097870155]
+texture = ExtResource("8_fqm4v")
+
+[node name="right_sprite" parent="." index="2" unique_id=219881718]
+texture = null

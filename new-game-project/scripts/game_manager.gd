@@ -14,7 +14,7 @@ enum Intensity {
 	HIGH
 }
 
-var SCORE_TO_END = 25
+var SCORE_TO_END = 75
 var END_SCENE_PATH = "res://scenes/game_end.tscn"
 var END_FADE_DURATION = 5.0
 var in_tutorial = true
