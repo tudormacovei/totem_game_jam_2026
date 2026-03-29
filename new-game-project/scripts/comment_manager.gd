@@ -6,23 +6,33 @@ extends Node3D
 @export var cooldown_seconds := 3 # How long to wait before using a comment again
 @export var comment_rate_seconds := .5 # How often comments show up
 @export var comment_scene: PackedScene
+var FIRST_COMMENT_DELAY_SECONDS = 8
 
 @onready var ui_layer: CanvasLayer = %UILayer
 
-
+var cur_tier := 1
 var last_used := {} # Key: comment string, Value: timestamp
+var first_tick_time: float = -1
 
 func _process(_delta: float) -> void:
 	randomize()
+
+	if first_tick_time == -1:
+		first_tick_time = Time.get_unix_time_from_system()
+	
+	if Time.get_unix_time_from_system() - first_tick_time < FIRST_COMMENT_DELAY_SECONDS:
+		return
 
 	var now := Time.get_unix_time_from_system()
 	var last_time = - comment_rate_seconds if last_used.size() == 0 else last_used.values().max()
 	if now - last_time >= comment_rate_seconds + randf() * comment_rate_seconds:
 		var intensity = GameManager.get_current_intensity()
 		var score = GameManager.get_current_score()
-		var tier = _get_tier(score)
-		var comment = get_general_comment(intensity, tier)
+		cur_tier = _get_tier(score)
+		var comment = get_general_comment(intensity, cur_tier)
 		_spawn_comment(comment)
+	
+	update_comment_rate()
 
 # Returns a random comment. Cooldown is applied.
 func get_general_comment(intensity: GameManager.Intensity, tier: int) -> String:
@@ -61,7 +71,6 @@ func _get_tier(score: int) -> int:
 	return GameManager.get_tier_from_score(score)
 
 func _spawn_comment(text: String) -> void:
-	print("Spawning comment: %s" % text)
 	var comment_node = comment_scene.instantiate()
 	ui_layer.add_child(comment_node)
 
@@ -69,3 +78,13 @@ func _spawn_comment(text: String) -> void:
 	if comment_script and comment_script is Comment:
 		comment_script.init_comment_text(text)
 		return
+
+func update_comment_rate() -> void:
+	if cur_tier == 1:
+		comment_rate_seconds = 0.6
+	elif cur_tier == 2:
+		comment_rate_seconds = 0.1
+	elif cur_tier == 3:
+		comment_rate_seconds = 0.05
+	else:
+		comment_rate_seconds = 0.05
