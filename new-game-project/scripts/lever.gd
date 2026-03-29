@@ -193,7 +193,7 @@ func _get_zone_snap_point_z(zone: int) -> float:
 	return 0.0
 
 func is_active() -> bool:
-	if is_complete or not has_focus:
+	if is_complete:
 		return false
 	return true
 

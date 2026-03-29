@@ -13,6 +13,8 @@ extends Node
 var SCROLL_TIME = 1.5
 var PAUSE_TIME = 10.0
 
+var queued_scroll: bool = false
+
 enum ScrollState {
 	PAUSED,
 	SCROLLING
@@ -36,22 +38,32 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
 	if not GameManager.in_tutorial:
 		_time_in_current_state += delta
 
 	if _state == ScrollState.SCROLLING and _time_in_current_state > SCROLL_TIME:
 		_animate_scroll(delta)
-		
-		# if paused means we gained focus 
-		_state = ScrollState.PAUSED
-		_time_in_current_state = _time_in_current_state - SCROLL_TIME
-		loaded_dioramas[1].lever_area.focus_gained()
+		if queued_scroll:
+			_state = ScrollState.SCROLLING
+			_time_in_current_state = _time_in_current_state - SCROLL_TIME
+			_add_diorama()
+			queued_scroll = false
+		else:
+			# if paused means we gained focus 
+			_state = ScrollState.PAUSED
+			_time_in_current_state = _time_in_current_state - SCROLL_TIME
+			loaded_dioramas[1].lever_area.focus_gained()
 
 	elif _state == ScrollState.PAUSED and _time_in_current_state > PAUSE_TIME:
 		_state = ScrollState.SCROLLING
 		_time_in_current_state = _time_in_current_state - PAUSE_TIME
 		_add_diorama()
+
+	elif _state == ScrollState.PAUSED and queued_scroll:
+		_state = ScrollState.SCROLLING
+		_time_in_current_state = 0.0
+		_add_diorama()
+		queued_scroll = false
 
 	if _state == ScrollState.SCROLLING:
 		_animate_scroll(delta)
@@ -117,8 +129,7 @@ func _animate_scroll(delta_time) -> void:
 		diorama_obj.global_position.y += delta_offset
 	
 	_cleanup_diorama_stack()
-	
+
 func _on_lever_completed() -> void:
-	_state = ScrollState.SCROLLING
-	_time_in_current_state = 0.0
-	_add_diorama()
+	# queue a scroll to be done when possible
+	queued_scroll = true
