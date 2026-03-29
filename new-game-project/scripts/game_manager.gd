@@ -45,3 +45,10 @@ func get_current_score() -> int:
 
 func get_current_intensity() -> GameManager.Intensity:
 	return current_intensity
+
+var current_lever_score: LeverScore = null
+
+func set_focus(leverScore: LeverScore) -> void:
+	if current_lever_score != null:
+		current_lever_score.lever_area._on_focus_loss()
+	current_lever_score = leverScore

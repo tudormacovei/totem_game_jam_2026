@@ -23,24 +23,27 @@ var _time_in_current_state : float
 
 var diorama_scene_height = 12.6
 
-var loaded_dioramas: Array[Node3D] = []
+var loaded_dioramas: Array[LeverScore] = []
 var next_diorama_index : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.lever_completed.connect(_on_lever_completed)
 	_add_diorama()
+	loaded_dioramas[0].lever_area.focus_gained()
 	_state = ScrollState.PAUSED
 	_time_in_current_state = 0.0
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_time_in_current_state += delta
 	if _state == ScrollState.SCROLLING and _time_in_current_state > SCROLL_TIME:
 		_animate_scroll(delta)
+		
+		# if paused means we gained focus 
 		_state = ScrollState.PAUSED
 		_time_in_current_state = _time_in_current_state - SCROLL_TIME
+		loaded_dioramas[1].lever_area.focus_gained()
 
 	elif _state == ScrollState.PAUSED and _time_in_current_state > PAUSE_TIME:
 		_state = ScrollState.SCROLLING
@@ -54,7 +57,7 @@ func _process(delta: float) -> void:
 ## Add a diorama to the stack, at the top.
 ## Does not modify the position of current objects in the stack
 func _add_diorama() -> void:
-	var diorama_node: Node3D
+	var diorama_node: LeverScore
 	var choice_float = randf() # the higher the value the greater the change of a high chaos choice
 	if GameManager.get_current_score() < 6:
 		choice_float = indifferent_curve.sample(choice_float)
@@ -66,15 +69,16 @@ func _add_diorama() -> void:
 	#print("Choice float value: " + str(choice_float))
 	if choice_float < 0.33:
 		var choice_idx = randi() % 5
-		diorama_node = diorama_scenes_indifferent[choice_idx].instantiate() as Node3D
+		diorama_node = diorama_scenes_indifferent[choice_idx].instantiate() as LeverScore
 	elif choice_float < 0.67:
 		var choice_idx = randi() % 5
-		diorama_node = diorama_scenes_medium[choice_idx].instantiate() as Node3D
+		diorama_node = diorama_scenes_medium[choice_idx].instantiate() as LeverScore
 	else:
 		var choice_idx = randi() % 5
-		diorama_node = diorama_scenes_extreme[choice_idx].instantiate() as Node3D
-		
+		diorama_node = diorama_scenes_extreme[choice_idx].instantiate() as LeverScore
+
 	add_child(diorama_node)
+	GameManager.set_focus(diorama_node)
 	
 	# PLACE DIORAMA
 	var bottom_position = Vector3(0, diorama_scene_height, 0)
