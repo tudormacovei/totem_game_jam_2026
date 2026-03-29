@@ -1,43 +1,21 @@
 [gd_scene format=3 uid="uid://b56mr3umschlb"]
 
-[ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_pqt0r"]
+[ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_1cja0"]
 [ext_resource type="PackedScene" uid="uid://bcg5dmxfhw74n" path="res://meshes/backgrounds/scene_bird_on_a_plate.glb" id="3_enqu4"]
 [ext_resource type="PackedScene" uid="uid://dlpiw76f3hv1b" path="res://meshes/backgrounds/scene_house.glb" id="3_pqt0r"]
-[ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="4_yv1pb"]
-[ext_resource type="Script" uid="uid://r2uqux5r88vc" path="res://scripts/lever.gd" id="5_c11dj"]
-[ext_resource type="PackedScene" uid="uid://qb88boj5jjb6" path="res://meshes/lever/lever.glb" id="6_ccg8c"]
+[ext_resource type="Texture2D" uid="uid://dh2w4b73kxyf6" path="res://textures/baby_goose.png" id="6_1cja0"]
 [ext_resource type="Texture2D" uid="uid://dwhxqshpcn7x2" path="res://textures/goose normal.webp" id="7_pqt0r"]
 [ext_resource type="Texture2D" uid="uid://csnkfmdirdv0a" path="res://textures/knife_fork2.png" id="8_opor5"]
-[ext_resource type="Texture2D" uid="uid://fasbfrd3wmo" path="res://textures/baby.webp" id="9_enqu4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
-size = Vector3(2.085, 7.8319507, 1)
-
-[node name="LeverScore" type="Node3D" unique_id=1795852748]
-script = ExtResource("1_pqt0r")
+[node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_1cja0")]
 background_left = ExtResource("3_enqu4")
 background_right = ExtResource("3_pqt0r")
 
-[node name="phone_box" parent="." unique_id=1580715568 instance=ExtResource("4_yv1pb")]
-
-[node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)
-script = ExtResource("5_c11dj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverArea3D" unique_id=207235068]
-transform = Transform3D(1, -1.6950067e-07, 0, 1.6950067e-07, 1, 0, 0, 0, 1, -3.2782555e-07, 4.468712, 0)
-shape = SubResource("BoxShape3D_7eprb")
-
-[node name="LeverMesh" parent="LeverArea3D" unique_id=369620874 instance=ExtResource("6_ccg8c")]
-
-[node name="lever_sprite" type="Sprite3D" parent="LeverArea3D" unique_id=1860565248]
-transform = Transform3D(-0.25, 0, -1.2577951e-07, 0, 0.25, 0, 3.774895e-08, 0, -0.833, -6.358924e-08, 7.0541916, -0.72737634)
+[node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_pqt0r")
 
-[node name="left_sprite" type="Sprite3D" parent="." unique_id=1097870155]
-transform = Transform3D(0.29999998, 0, 0, 0, 0.29999998, 0, 0, 0, 0.29999998, -1.686187, 9.664286, 0.6757238)
+[node name="left_sprite" parent="." index="2" unique_id=1097870155]
 texture = ExtResource("8_opor5")
 
-[node name="right_sprite" type="Sprite3D" parent="." unique_id=219881718]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.8764423, 9.479885, 0.6757238)
-texture = ExtResource("9_enqu4")
+[node name="right_sprite" parent="." index="3" unique_id=219881718]
+texture = ExtResource("6_1cja0")
