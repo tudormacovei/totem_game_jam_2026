@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c11g3uqlmsc0q"]
 
+[ext_resource type="Script" uid="uid://dhhgoicpnjhl3" path="res://scenes/camera_movement.gd" id="1_6p3nn"]
 [ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
@@ -21,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://b56mr3umschlb" path="res://scenes/dioramas/goose/goose_extreme.tscn" id="14_kkokr"]
 [ext_resource type="PackedScene" uid="uid://dnql0nx73iosd" path="res://scenes/dioramas/penguin/penguin_extreme.tscn" id="15_lhwp2"]
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
+[ext_resource type="Texture2D" uid="uid://c2tmev2lbo6wt" path="res://textures/screens/phone_background_final.webp" id="21_u0fll"]
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
-[ext_resource type="Texture2D" uid="uid://7qcuk3iqddks" path="res://textures/phone_background.webp" id="23_58gk3"]
 [ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
@@ -47,8 +48,10 @@ point_count = 3
 [node name="Camera3D" type="Camera3D" parent="." unique_id=202799904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 8.740741)
 fov = 80.0
+script = ExtResource("1_6p3nn")
 
-[node name="Autoscroller" type="Node" parent="." unique_id=766562260]
+[node name="Autoscroller" type="Node3D" parent="Camera3D" unique_id=1083539218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5947304, -8.740741)
 script = ExtResource("2_pw63i")
 diorama_scenes_indifferent = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("8_6p3nn"), ExtResource("4_58gk3"), ExtResource("5_to7gp"), ExtResource("6_u0fll")])
 diorama_scenes_medium = Array[PackedScene]([ExtResource("3_xdqt8"), ExtResource("8_k67gn"), ExtResource("9_k3g67"), ExtResource("10_4bgka"), ExtResource("11_02d50")])
@@ -58,29 +61,29 @@ medium_curve = SubResource("Curve_58gk3")
 extreme_curve = SubResource("Curve_to7gp")
 animation_profile = SubResource("Curve_pw63i")
 
-[node name="3D_UI" type="Node3D" parent="." unique_id=291419389]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.781755, 4.5862656, -1.7269325)
+[node name="3D_UI" type="Node3D" parent="Camera3D" unique_id=291419389]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.781755, -2.0084648, -10.467673)
 
-[node name="like_button" parent="3D_UI" unique_id=1546856612 instance=ExtResource("1_pu3yx")]
+[node name="like_button" parent="Camera3D/3D_UI" unique_id=1546856612 instance=ExtResource("1_pu3yx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.108, 0)
 
-[node name="like_counter" parent="3D_UI" unique_id=1907595360 instance=ExtResource("3_7ykc4")]
+[node name="like_counter" parent="Camera3D/3D_UI" unique_id=1907595360 instance=ExtResource("3_7ykc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, -2.233, 0)
 tracking_likes = true
 
-[node name="comments_button" parent="3D_UI" unique_id=89776679 instance=ExtResource("5_gubc5")]
+[node name="comments_button" parent="Camera3D/3D_UI" unique_id=89776679 instance=ExtResource("5_gubc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
 
-[node name="comment_counter" parent="3D_UI" unique_id=1577119341 instance=ExtResource("3_7ykc4")]
+[node name="comment_counter" parent="Camera3D/3D_UI" unique_id=1577119341 instance=ExtResource("3_7ykc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)
 
-[node name="Foreground" type="Sprite3D" parent="." unique_id=504232160]
-transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6134644, 2.6983695)
+[node name="Foreground" type="Sprite3D" parent="Camera3D" unique_id=504232160]
+transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 0.018733978, -6.0423713)
 texture = ExtResource("22_adb74")
 
 [node name="Background" type="Sprite3D" parent="." unique_id=1448638645]
-transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.739964)
-texture = ExtResource("23_58gk3")
+transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.118261)
+texture = ExtResource("21_u0fll")
 
 [node name="Lighting" type="Node" parent="." unique_id=1285302550]
 
