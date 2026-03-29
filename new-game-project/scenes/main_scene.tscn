@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
-[ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://c00evs34iibob" path="res://scenes/dioramas/bear/bear_indifferent.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://byqafy3fnhgw4" path="res://scenes/dioramas/bear/bear_medium.tscn" id="3_xdqt8"]
 [ext_resource type="PackedScene" uid="uid://decgp71qntyr1" path="res://scenes/dioramas/bear/bear_extreme.tscn" id="4_adb74"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://beekoaifu62yl" path="res://scenes/dioramas/water/water_indifferent.tscn" id="14_kkokr"]
 [ext_resource type="PackedScene" uid="uid://ccc5020e7d1jk" path="res://scenes/dioramas/water/water_medium.tscn" id="15_lhwp2"]
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
+[ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 
 [sub_resource type="Curve" id="Curve_pw63i"]
@@ -56,10 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
 [node name="comment_counter" parent="3D_UI" unique_id=1577119341 instance=ExtResource("3_7ykc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)
 
-[node name="CommentManager" type="Node3D" parent="." unique_id=1176773547]
-script = ExtResource("6_rt2n2")
-general_pool = ExtResource("7_c16ls")
-
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=504232160]
 transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6415234, 4.910984)
 texture = ExtResource("22_adb74")
@@ -74,3 +71,11 @@ light_energy = 2.0
 transform = Transform3D(0.081849545, 0.66864574, -0.73906267, -0.8913302, 0.38088444, 0.24588141, 0.44590503, 0.63862354, 0.62715924, 3.7452376, 0, 0.7221513)
 light_color = Color(0.8745098, 1, 1, 1)
 light_energy = 0.5
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=11082105]
+unique_name_in_owner = true
+
+[node name="CommentManager" type="Node3D" parent="UILayer" unique_id=1176773547]
+script = ExtResource("6_rt2n2")
+general_pool = ExtResource("7_c16ls")
+comment_scene = ExtResource("22_58gk3")

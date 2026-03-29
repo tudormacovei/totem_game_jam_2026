@@ -43,6 +43,7 @@ _data = {
 [node name="Comment" type="Node2D" unique_id=123723634]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2118917405]
+visible = false
 offset_right = 209.0
 offset_bottom = 86.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -61,7 +62,7 @@ offset_top = 28.0
 offset_right = 85.0
 offset_bottom = 62.0
 size_flags_vertical = 3
-text = "That node's children may not be part of the active scene yet."
+text = "That"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect" unique_id=1893482373]
 root_node = NodePath("../..")

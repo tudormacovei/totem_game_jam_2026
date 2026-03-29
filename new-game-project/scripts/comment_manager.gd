@@ -2,7 +2,10 @@ extends Node3D
 
 @export var general_pool: CommentPool
 @export var cooldown_seconds := 3 # How long to wait before using a comment again
-@export var comment_rate_seconds := 5 # How often comments show up
+@export var comment_rate_seconds := 1 # How often comments show up
+@export var comment_scene: PackedScene
+
+@onready var ui_layer: CanvasLayer = %UILayer
 
 #TODO: Needs balancing
 var SCORE_TO_TIER_DICT := {
@@ -14,6 +17,7 @@ var SCORE_TO_TIER_DICT := {
 var last_used := {} # Key: comment string, Value: timestamp
 
 func _process(_delta: float) -> void:
+	return # Disable for now
 	randomize()
 
 	var now := Time.get_unix_time_from_system()
@@ -23,7 +27,7 @@ func _process(_delta: float) -> void:
 		var score = GameManager.get_current_score()
 		var tier = _get_tier(score)
 		var comment = get_general_comment(intensity, tier)
-		print("Comment for intesity %s tier %d: %s" % [intensity, tier, comment])
+		_spawn_comment(comment)
 
 # Returns a random comment. Cooldown is applied.
 func get_general_comment(intensity: GameManager.Intensity, tier: int) -> String:
@@ -63,3 +67,13 @@ func _get_tier(score: int) -> int:
 		if score <= i:
 			return SCORE_TO_TIER_DICT[i]
 	return 3
+
+func _spawn_comment(text: String) -> void:
+	print("Spawning comment: %s" % text)
+	var comment_node = comment_scene.instantiate()
+	ui_layer.add_child(comment_node)
+
+	var comment_script = comment_node.get_node_or_null("NinePatchRect")
+	if comment_script and comment_script is Comment:
+		comment_script.init_comment_text(text)
+		return
