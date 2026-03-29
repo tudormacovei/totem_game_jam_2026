@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2tws624c7x8x"
-path.s3tc="res://.godot/imported/lever_lever_2_Color.png-de35bd1b61a5c777c7e0d4a5df1046c5.s3tc.ctex"
+path="res://.godot/imported/lever_lever_2_Color.png-de35bd1b61a5c777c7e0d4a5df1046c5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "e5a05ea21774bad9f57f0ec4ebe82fb6"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://meshes/lever/lever_lever_2_Color.png"
-dest_files=["res://.godot/imported/lever_lever_2_Color.png-de35bd1b61a5c777c7e0d4a5df1046c5.s3tc.ctex"]
+dest_files=["res://.godot/imported/lever_lever_2_Color.png-de35bd1b61a5c777c7e0d4a5df1046c5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

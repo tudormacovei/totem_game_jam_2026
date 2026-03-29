@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://syu4tslqpbr6"
-path.s3tc="res://.godot/imported/scene_fire_scene_fire_28Set_Color.png-1b5ca437a91f1a92ac2a0167e40bf885.s3tc.ctex"
+path="res://.godot/imported/scene_fire_scene_fire_28Set_Color.png-1b5ca437a91f1a92ac2a0167e40bf885.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "78f0f5cda7e462bf2390e0579e9d6742"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://meshes/backgrounds/scene_fire_scene_fire_28Set_Color.png"
-dest_files=["res://.godot/imported/scene_fire_scene_fire_28Set_Color.png-1b5ca437a91f1a92ac2a0167e40bf885.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_fire_scene_fire_28Set_Color.png-1b5ca437a91f1a92ac2a0167e40bf885.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgtx1833a4da3"
-path.s3tc="res://.godot/imported/scene_bird_on_a_plate_scene_bird_on_plate_5Set_Color.png-86e2dedac6c4bf9bc77f592a5617e5cd.s3tc.ctex"
+path="res://.godot/imported/scene_bird_on_a_plate_scene_bird_on_plate_5Set_Color.png-86e2dedac6c4bf9bc77f592a5617e5cd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://meshes/backgrounds/scene_bird_on_a_plate_scene_bird_on_plate_5Set_Color.png"
-dest_files=["res://.godot/imported/scene_bird_on_a_plate_scene_bird_on_plate_5Set_Color.png-86e2dedac6c4bf9bc77f592a5617e5cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_bird_on_a_plate_scene_bird_on_plate_5Set_Color.png-86e2dedac6c4bf9bc77f592a5617e5cd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

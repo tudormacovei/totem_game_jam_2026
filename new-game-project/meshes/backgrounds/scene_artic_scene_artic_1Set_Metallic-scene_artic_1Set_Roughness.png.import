@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddipk2r1diojm"
-path.s3tc="res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.s3tc.ctex"
+path="res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://meshes/backgrounds/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png"
-dest_files=["res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_artic_scene_artic_1Set_Metallic-scene_artic_1Set_Roughness.png-83ff86cd74a36fd78556c1e6fd7bcb3b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

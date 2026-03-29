@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkiywb6v6ytgb"
-path.s3tc="res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-7364cf64ce78fd27f3e82c498b365531.s3tc.ctex"
+path="res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-7364cf64ce78fd27f3e82c498b365531.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "7f2ff6ecea85bd00bdcefe10530f5fda"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://meshes/lever/lever_box_22_Metallic-box_22_Roughness.png"
-dest_files=["res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-7364cf64ce78fd27f3e82c498b365531.s3tc.ctex"]
+dest_files=["res://.godot/imported/lever_box_22_Metallic-box_22_Roughness.png-7364cf64ce78fd27f3e82c498b365531.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
