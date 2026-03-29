@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NoJamNoLife"
-run/main_scene="uid://c11g3uqlmsc0q"
+run/main_scene="uid://dwr8whp2qyuie"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

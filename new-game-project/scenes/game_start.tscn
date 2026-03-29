@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dwr8whp2qyuie"]
+
+[ext_resource type="Texture2D" uid="uid://ct6pe1eja56cl" path="res://textures/phone_background_full.png" id="1_cd562"]
+[ext_resource type="Script" uid="uid://bcbtx51cjw15q" path="res://scenes/game start/game_start.gd" id="1_s5y6q"]
+[ext_resource type="AudioStream" uid="uid://bjd2nu061gikh" path="res://audio/sfx/subway_ambiance.mp3" id="2_s5y6q"]
+
+[node name="GameStart" type="Node2D" unique_id=2082934740]
+script = ExtResource("1_s5y6q")
+transition_delay = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1153722354]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=197903561]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1887720166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 8.740742)
+fov = 80.0
+
+[node name="Background" type="Sprite3D" parent="." unique_id=1942715463]
+transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.739964)
+texture = ExtResource("1_cd562")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=455397005]
+stream = ExtResource("2_s5y6q")
+autoplay = true

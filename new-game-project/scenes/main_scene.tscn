@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c11g3uqlmsc0q"]
 
+[ext_resource type="Script" uid="uid://c7i0cmcxjd7wo" path="res://scenes/game start/main_scene_start.gd" id="1_6p3nn"]
 [ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
@@ -24,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 [ext_resource type="Texture2D" uid="uid://7qcuk3iqddks" path="res://textures/phone_background.webp" id="23_58gk3"]
-[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
+[ext_resource type="Script" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
@@ -43,10 +44,22 @@ _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.55163723, 0.7
 point_count = 3
 
 [node name="MainScene" type="Node3D" unique_id=2076316707]
+script = ExtResource("1_6p3nn")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=202799904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5947304, 8.740741)
 fov = 80.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=231492793]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=464305574]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Autoscroller" type="Node" parent="." unique_id=766562260]
 script = ExtResource("2_pw63i")
