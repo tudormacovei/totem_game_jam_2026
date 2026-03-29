@@ -26,12 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://jkmw5yp2ohpc" path="res://scenes/dioramas/penguin/penguin_extreme2.tscn" id="19_4bgka"]
 [ext_resource type="PackedScene" uid="uid://c6fuuqw0nu3l6" path="res://meshes/3d_ui/k.glb" id="21_k3g67"]
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
-[ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
+[ext_resource type="Texture2D" uid="uid://5bq82pwykuyj" path="res://textures/new_phone.webp" id="23_k3g67"]
 [ext_resource type="Texture2D" uid="uid://c2tmev2lbo6wt" path="res://textures/screens/phone_background_final.webp" id="23_k67gn"]
 [ext_resource type="Script" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.63953483), 0.49077323, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_58gk3"]
@@ -96,7 +96,7 @@ k_scene = ExtResource("21_k3g67")
 
 [node name="Foreground" type="Sprite3D" parent="." unique_id=504232160]
 transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6134644, 2.6983695)
-texture = ExtResource("22_adb74")
+texture = ExtResource("23_k3g67")
 
 [node name="Background" type="Sprite3D" parent="." unique_id=1448638645]
 transform = Transform3D(2, 0, 0, 0, 1.9, 0, 0, 0, 3.96, 0, 6.642, -15.739964)
