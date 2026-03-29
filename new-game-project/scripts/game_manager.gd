@@ -14,6 +14,9 @@ enum Intensity {
 	HIGH
 }
 
+var SCORE_TO_END = 20
+var END_SCENE_PATH = "res://scenes/game_end.tscn"
+var END_FADE_DURATION = 5.0
 var in_tutorial = true
 
 var SCORE_PER_LEVER = 1 # How many points are awarded for completing a scenario?
@@ -25,12 +28,12 @@ var current_right_sound = null
 
 var music_player: AudioStreamPlayer
 var sound_effect_player: AudioStreamPlayer
+var is_transitioning_to_end := false
 
 signal lever_completed
 
 func update_intensity(intensity: Intensity) -> void:
 	current_intensity = intensity
-
 
 func on_lever_completed(zone_positivity: bool, lever: Lever) -> void:
 	in_tutorial = false
@@ -47,6 +50,32 @@ func on_lever_completed(zone_positivity: bool, lever: Lever) -> void:
 	score_total = max(score_total, 0)
 	print("Lever completed. Score: %d" % score_total)
 	lever_completed.emit()
+
+	if score_total > SCORE_TO_END:
+		_transition_to_game_end()
+
+
+func _transition_to_game_end() -> void:
+	if is_transitioning_to_end:
+		return
+
+	is_transitioning_to_end = true
+	var fade_rect := get_tree().current_scene.get_node_or_null("CanvasLayer/ColorRect") as ColorRect
+	if fade_rect == null:
+		if music_player != null:
+			music_player.stop()
+		get_tree().change_scene_to_file(END_SCENE_PATH)
+		return
+
+	fade_rect.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(fade_rect, "modulate:a", 1.0, END_FADE_DURATION)
+	await tween.finished
+	if music_player != null:
+		music_player.stop()
+	get_tree().change_scene_to_file(END_SCENE_PATH)
+
+	in_tutorial = true
 
 func change_music(music: AudioStream) -> void:
 	if music_player == null:

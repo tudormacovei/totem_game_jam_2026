@@ -2,6 +2,7 @@ extends Node2D
 
 @export var transition_delay: float = 3.0
 @export var fade_duration: float = 1.0
+@export var target_scene: PackedScene
 
 @onready var fade_rect: ColorRect = $CanvasLayer/ColorRect
 
@@ -17,4 +18,7 @@ func _ready() -> void:
 	fade_out_tween.tween_property(fade_rect, "modulate:a", 1.0, fade_duration)
 	await fade_out_tween.finished
 
-	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	if target_scene != null:
+		get_tree().change_scene_to_packed(target_scene)
+	else:
+		get_tree().quit()
