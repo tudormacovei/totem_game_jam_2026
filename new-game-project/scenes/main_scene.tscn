@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
-[ext_resource type="PackedScene" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://c00evs34iibob" path="res://scenes/dioramas/bear/bear_indifferent.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://byqafy3fnhgw4" path="res://scenes/dioramas/bear/bear_medium.tscn" id="3_xdqt8"]
 [ext_resource type="PackedScene" uid="uid://d224jyeh2omct" path="res://scenes/dioramas/goose/goose_indifferent.tscn" id="4_58gk3"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 [ext_resource type="Texture2D" uid="uid://7qcuk3iqddks" path="res://textures/phone_background.webp" id="23_58gk3"]
-[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
+[ext_resource type="Script" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
@@ -75,11 +75,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=504232160]
+
 [node name="CommentManager" type="Node3D" parent="." unique_id=1176773547]
 script = ExtResource("6_rt2n2")
 general_pool = ExtResource("7_c16ls")
 
-[node name="Foreground" type="Sprite3D" parent="." unique_id=504232160]
+[node name="Foreground" type="Sprite3D" parent="." unique_id=1631142073]
 transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6415234, 4.910984)
 texture = ExtResource("22_adb74")
 
@@ -98,13 +99,6 @@ transform = Transform3D(0.081849545, 0.66864574, -0.73906267, -0.8913302, 0.3808
 light_color = Color(0.8745098, 1, 1, 1)
 light_energy = 0.3
 
-[node name="UILayer" type="CanvasLayer" parent="." unique_id=11082105]
-unique_name_in_owner = true
-
-[node name="CommentManager" type="Node3D" parent="UILayer" unique_id=1176773547]
-script = ExtResource("6_rt2n2")
-general_pool = ExtResource("7_c16ls")
-comment_scene = ExtResource("22_58gk3")
 [node name="CommentLikeLight" type="SpotLight3D" parent="Lighting" unique_id=1065438125]
 transform = Transform3D(0.99988467, 0.0022537338, 0.015015557, -0.0151837915, 0.14841361, 0.98880875, -7.986362e-09, -0.9889228, 0.14843072, 9.033354, 13.275093, 1.9377422)
 light_energy = 10.0
@@ -115,3 +109,11 @@ spot_angle_attenuation = 1.7295066
 script = ExtResource("24_to7gp")
 rotation_magnitude = 30.0
 rotation_speed = 0.1
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=11082105]
+unique_name_in_owner = true
+
+[node name="CommentManager" type="Node3D" parent="UILayer" unique_id=281458402]
+script = ExtResource("6_rt2n2")
+general_pool = ExtResource("7_c16ls")
+comment_scene = ExtResource("22_58gk3")

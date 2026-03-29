@@ -13,6 +13,9 @@ var outline_mat: Material = preload("res://materials/outline.tres")
 var ROT_MAX_Z := 19.0
 var ROT_SPEED := 0.08
 var SNAP_ANIM_DURATION := 0.4
+var SCALE_TWEEN_SPEED := 12.0
+var SCALE_MAX_SIZE = 1.05
+var SCALE_PRESSED_SIZE = 1.025
 var zone_to_positivity_dict := {} # Populated at runtime based on is_left_zone_positive
 
 # State variables
@@ -40,6 +43,8 @@ func _ready() -> void:
 	zone_to_positivity_dict[3] = not is_left_zone_positive
 
 func _process(delta: float) -> void:
+	_set_scale(delta)
+
 	if is_playing_snap_anim:
 		t += delta / SNAP_ANIM_DURATION
 		if t >= 1.0:
@@ -79,7 +84,7 @@ func _on_mouse_entered() -> void:
 		return
 
 	is_mouse_over = true
-	mesh.set_surface_override_material(0, outline_mat)
+	#mesh.set_surface_override_material(0, outline_mat)
 
 func _on_mouse_exited() -> void:
 	if is_complete:
@@ -88,6 +93,18 @@ func _on_mouse_exited() -> void:
 	is_mouse_over = false
 	if not rotating:
 		mesh.set_surface_override_material(0, normal_mat)
+
+func _set_scale(delta: float) -> void:
+	var target_scale := Vector3.ONE
+
+	if is_mouse_over:
+		target_scale = Vector3.ONE * SCALE_MAX_SIZE
+
+	if rotating:
+		target_scale = Vector3.ONE * SCALE_PRESSED_SIZE
+
+	var weight = 1.0 - exp(-SCALE_TWEEN_SPEED * delta)
+	scale = scale.lerp(target_scale, weight)
 
 func _rotate_lever(delta_z: float):
 	var rot = rotation_degrees
