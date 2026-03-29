@@ -23,6 +23,18 @@
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 
+[sub_resource type="Curve" id="Curve_adb74"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_58gk3"]
+_data = [Vector2(0, 0), 0.0, 2.1320543, 0, 0, Vector2(1, 1), 2.628526, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_to7gp"]
+_data = [Vector2(0, 0), 0.0, 2.4430373, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_pw63i"]
 _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.55163723, 0.79076827), 1.3581973, 1.3581973, 0, 0, Vector2(1, 1), 0.025274547, 0.0, 0, 0]
 point_count = 3
@@ -38,6 +50,9 @@ script = ExtResource("2_pw63i")
 diorama_scenes_indifferent = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("5_58gk3"), ExtResource("8_6p3nn"), ExtResource("11_4bgka"), ExtResource("14_kkokr")])
 diorama_scenes_medium = Array[PackedScene]([ExtResource("3_xdqt8"), ExtResource("6_to7gp"), ExtResource("9_k67gn"), ExtResource("12_02d50"), ExtResource("15_lhwp2")])
 diorama_scenes_extreme = Array[PackedScene]([ExtResource("4_adb74"), ExtResource("7_u0fll"), ExtResource("10_k3g67"), ExtResource("13_pgk25"), ExtResource("16_l40q6")])
+indifferent_curve = SubResource("Curve_adb74")
+medium_curve = SubResource("Curve_58gk3")
+extreme_curve = SubResource("Curve_to7gp")
 animation_profile = SubResource("Curve_pw63i")
 
 [node name="3D_UI" type="Node3D" parent="." unique_id=291419389]
