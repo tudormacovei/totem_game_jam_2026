@@ -5,24 +5,36 @@
 [ext_resource type="PackedScene" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://c00evs34iibob" path="res://scenes/dioramas/bear/bear_indifferent.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://byqafy3fnhgw4" path="res://scenes/dioramas/bear/bear_medium.tscn" id="3_xdqt8"]
+[ext_resource type="PackedScene" uid="uid://d224jyeh2omct" path="res://scenes/dioramas/goose/goose_indifferent.tscn" id="4_58gk3"]
 [ext_resource type="PackedScene" uid="uid://decgp71qntyr1" path="res://scenes/dioramas/bear/bear_extreme.tscn" id="4_adb74"]
-[ext_resource type="PackedScene" uid="uid://d3nj00ksgrat0" path="res://scenes/dioramas/child/child_indifferent.tscn" id="5_58gk3"]
 [ext_resource type="PackedScene" uid="uid://cked633nor4ua" path="res://meshes/3d_ui/comments_button.glb" id="5_gubc5"]
+[ext_resource type="PackedScene" uid="uid://b2cnx8m8qb0r" path="res://scenes/dioramas/penguin/penguin_indifferent.tscn" id="5_to7gp"]
 [ext_resource type="Script" uid="uid://d4odu2426wah" path="res://scripts/comment_manager.gd" id="6_rt2n2"]
-[ext_resource type="PackedScene" uid="uid://b1rcusxn88e1n" path="res://scenes/dioramas/child/child_medium.tscn" id="6_to7gp"]
+[ext_resource type="PackedScene" uid="uid://beekoaifu62yl" path="res://scenes/dioramas/water/water_indifferent.tscn" id="6_u0fll"]
 [ext_resource type="Resource" uid="uid://dufsi4kjgsrnh" path="res://resources/comments/general_comments.tres" id="7_c16ls"]
-[ext_resource type="PackedScene" uid="uid://bouyvq6266hre" path="res://scenes/dioramas/child/child_extreme.tscn" id="7_u0fll"]
-[ext_resource type="PackedScene" uid="uid://x0patrm4jtqh" path="res://scenes/dioramas/goose/goose_indifferent.tscn" id="8_6p3nn"]
-[ext_resource type="PackedScene" uid="uid://bvmjngmsdasqg" path="res://scenes/dioramas/goose/goose_medium.tscn" id="9_k67gn"]
-[ext_resource type="PackedScene" uid="uid://b56mr3umschlb" path="res://scenes/dioramas/goose/goose_extreme.tscn" id="10_k3g67"]
-[ext_resource type="PackedScene" uid="uid://da6ao1en3txps" path="res://scenes/dioramas/penguin/penguin_indifferent.tscn" id="11_4bgka"]
-[ext_resource type="PackedScene" uid="uid://85qqaj1crhfq" path="res://scenes/dioramas/penguin/penguin_medium.tscn" id="12_02d50"]
-[ext_resource type="PackedScene" uid="uid://dnql0nx73iosd" path="res://scenes/dioramas/penguin/penguin_extreme.tscn" id="13_pgk25"]
-[ext_resource type="PackedScene" uid="uid://beekoaifu62yl" path="res://scenes/dioramas/water/water_indifferent.tscn" id="14_kkokr"]
-[ext_resource type="PackedScene" uid="uid://ccc5020e7d1jk" path="res://scenes/dioramas/water/water_medium.tscn" id="15_lhwp2"]
+[ext_resource type="PackedScene" uid="uid://x0patrm4jtqh" path="res://scenes/dioramas/child/child_indifferent.tscn" id="8_6p3nn"]
+[ext_resource type="PackedScene" uid="uid://b1rcusxn88e1n" path="res://scenes/dioramas/child/child_medium.tscn" id="8_k67gn"]
+[ext_resource type="PackedScene" uid="uid://bvmjngmsdasqg" path="res://scenes/dioramas/goose/goose_medium.tscn" id="9_k3g67"]
+[ext_resource type="PackedScene" uid="uid://85qqaj1crhfq" path="res://scenes/dioramas/penguin/penguin_medium.tscn" id="10_4bgka"]
+[ext_resource type="PackedScene" uid="uid://ccc5020e7d1jk" path="res://scenes/dioramas/water/water_medium.tscn" id="11_02d50"]
+[ext_resource type="PackedScene" uid="uid://bouyvq6266hre" path="res://scenes/dioramas/child/child_extreme.tscn" id="13_pgk25"]
+[ext_resource type="PackedScene" uid="uid://b56mr3umschlb" path="res://scenes/dioramas/goose/goose_extreme.tscn" id="14_kkokr"]
+[ext_resource type="PackedScene" uid="uid://dnql0nx73iosd" path="res://scenes/dioramas/penguin/penguin_extreme.tscn" id="15_lhwp2"]
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
+
+[sub_resource type="Curve" id="Curve_adb74"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_58gk3"]
+_data = [Vector2(0, 0), 0.0, 2.1320543, 0, 0, Vector2(1, 1), 2.628526, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_to7gp"]
+_data = [Vector2(0, 0), 0.0, 2.4430373, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_pw63i"]
 _data = [Vector2(0.012170382, 0), 0.0, 0.11891303, 0, 0, Vector2(0.55163723, 0.79076827), 1.3581973, 1.3581973, 0, 0, Vector2(1, 1), 0.025274547, 0.0, 0, 0]
@@ -36,9 +48,12 @@ fov = 60.0
 
 [node name="Autoscroller" type="Node" parent="." unique_id=766562260]
 script = ExtResource("2_pw63i")
-diorama_scenes_indifferent = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("5_58gk3"), ExtResource("8_6p3nn"), ExtResource("11_4bgka"), ExtResource("14_kkokr")])
-diorama_scenes_medium = Array[PackedScene]([ExtResource("3_xdqt8"), ExtResource("6_to7gp"), ExtResource("9_k67gn"), ExtResource("12_02d50"), ExtResource("15_lhwp2")])
-diorama_scenes_extreme = Array[PackedScene]([ExtResource("4_adb74"), ExtResource("7_u0fll"), ExtResource("10_k3g67"), ExtResource("13_pgk25"), ExtResource("16_l40q6")])
+diorama_scenes_indifferent = Array[PackedScene]([ExtResource("3_rt2n2"), ExtResource("8_6p3nn"), ExtResource("4_58gk3"), ExtResource("5_to7gp"), ExtResource("6_u0fll")])
+diorama_scenes_medium = Array[PackedScene]([ExtResource("3_xdqt8"), ExtResource("8_k67gn"), ExtResource("9_k3g67"), ExtResource("10_4bgka"), ExtResource("11_02d50")])
+diorama_scenes_extreme = Array[PackedScene]([ExtResource("4_adb74"), ExtResource("13_pgk25"), ExtResource("14_kkokr"), ExtResource("15_lhwp2"), ExtResource("16_l40q6")])
+indifferent_curve = SubResource("Curve_adb74")
+medium_curve = SubResource("Curve_58gk3")
+extreme_curve = SubResource("Curve_to7gp")
 animation_profile = SubResource("Curve_pw63i")
 
 [node name="3D_UI" type="Node3D" parent="." unique_id=291419389]
@@ -65,12 +80,12 @@ texture = ExtResource("22_adb74")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=141663048]
 transform = Transform3D(0.8660254, 0.12940952, 0.482963, -0.48296297, 0.46650636, 0.74102545, -0.12940955, -0.875, 0.4665064, 3.7452376, 0, 0.7221513)
-light_energy = 2.0
+light_energy = 0.5
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Lighting" unique_id=1186801253]
 transform = Transform3D(0.081849545, 0.66864574, -0.73906267, -0.8913302, 0.38088444, 0.24588141, 0.44590503, 0.63862354, 0.62715924, 3.7452376, 0, 0.7221513)
 light_color = Color(0.8745098, 1, 1, 1)
-light_energy = 0.5
+light_energy = 0.3
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=11082105]
 unique_name_in_owner = true

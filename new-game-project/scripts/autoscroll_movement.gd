@@ -4,6 +4,10 @@ extends Node
 @export var diorama_scenes_medium: Array[PackedScene]
 @export var diorama_scenes_extreme: Array[PackedScene]
 
+@export var indifferent_curve: Curve
+@export var medium_curve: Curve
+@export var extreme_curve: Curve
+
 @export var animation_profile: Curve
 
 var SCROLL_TIME = 0.8
@@ -34,13 +38,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_time_in_current_state += delta
 	if _state == ScrollState.SCROLLING and _time_in_current_state > SCROLL_TIME:
-		print("Starting PAUSE")
 		_animate_scroll(delta)
 		_state = ScrollState.PAUSED
 		_time_in_current_state = _time_in_current_state - SCROLL_TIME
 
 	elif _state == ScrollState.PAUSED and _time_in_current_state > PAUSE_TIME:
-		print("Starting SCROLL")
 		_state = ScrollState.SCROLLING
 		_time_in_current_state = _time_in_current_state - PAUSE_TIME
 		_add_diorama()
@@ -56,11 +58,13 @@ func _add_diorama() -> void:
 
 	var diorama_node: Node3D
 	var choice_float = randf() # the higher the value the greater the change of a high chaos choice
-	if GameManager.get_current_score() > 6:
-		choice_float += randf() * 2
-	if GameManager.get_current_score() > 12:
-		choice_float += randf() * 5
-	choice_float /= 2.0 # bring back to 0.0, 1.0 range
+	if GameManager.get_current_score() < 6:
+		choice_float = indifferent_curve.sample(choice_float)
+	elif GameManager.get_current_score() <= 12:
+		choice_float = medium_curve.sample(choice_float)
+	else:
+		choice_float = extreme_curve.sample(choice_float) 
+	
 	print("Choice float value: " + str(choice_float))
 	if choice_float < 0.33:
 		var choice_idx = randi() % 5
@@ -108,7 +112,6 @@ func _animate_scroll(delta_time) -> void:
 	_cleanup_diorama_stack()
 	
 func _on_lever_completed() -> void:
-	print("AUTOSCROLL ON LEVER COMPLETED!")
 	_state = ScrollState.SCROLLING
 	_time_in_current_state = 0.0
 	_add_diorama()
