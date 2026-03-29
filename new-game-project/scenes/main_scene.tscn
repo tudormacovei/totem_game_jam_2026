@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://cvxxmjw0otxl5" path="res://scenes/dioramas/water/water_extreme.tscn" id="16_l40q6"]
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
+[ext_resource type="Texture2D" uid="uid://7qcuk3iqddks" path="res://textures/phone_background.webp" id="23_58gk3"]
+[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]
@@ -73,8 +75,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, -7.333, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6000004, -11.916581, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=504232160]
+[node name="CommentManager" type="Node3D" parent="." unique_id=1176773547]
+script = ExtResource("6_rt2n2")
+general_pool = ExtResource("7_c16ls")
+
+[node name="Foreground" type="Sprite3D" parent="." unique_id=504232160]
 transform = Transform3D(0.50485575, 0, 0, 0, 0.47973782, 0, 0, 0, 1, 0, 6.6415234, 4.910984)
 texture = ExtResource("22_adb74")
+
+[node name="Background" type="Sprite3D" parent="." unique_id=1448638645]
+transform = Transform3D(1, 0, 0, 0, 0.95, 0, 0, 0, 1.98, 0, 6.642, -4.2)
+texture = ExtResource("23_58gk3")
 
 [node name="Lighting" type="Node" parent="." unique_id=1285302550]
 
@@ -94,3 +105,13 @@ unique_name_in_owner = true
 script = ExtResource("6_rt2n2")
 general_pool = ExtResource("7_c16ls")
 comment_scene = ExtResource("22_58gk3")
+[node name="CommentLikeLight" type="SpotLight3D" parent="Lighting" unique_id=1065438125]
+transform = Transform3D(0.99988467, 0.0022537338, 0.015015557, -0.0151837915, 0.14841361, 0.98880875, -7.986362e-09, -0.9889228, 0.14843072, 9.033354, 13.275093, 1.9377422)
+light_energy = 10.0
+spot_range = 30.0
+spot_attenuation = 0.25
+spot_angle = 20.0
+spot_angle_attenuation = 1.7295066
+script = ExtResource("24_to7gp")
+rotation_magnitude = 30.0
+rotation_speed = 0.1

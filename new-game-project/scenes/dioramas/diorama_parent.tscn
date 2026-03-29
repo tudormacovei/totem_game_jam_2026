@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7el6asifhcp" path="res://textures/bear normal.webp" id="7_qfx1d"]
 [ext_resource type="Texture2D" uid="uid://dbq6jusmbsin4" path="res://textures/honey.webp" id="8_7kxr1"]
 [ext_resource type="Texture2D" uid="uid://dpn1xe6bwheht" path="res://textures/fish.webp" id="9_clqti"]
+[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="10_nxq6l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
 size = Vector3(2.085, 7.8319507, 1)
@@ -66,7 +67,7 @@ spot_angle = 30.0
 spot_angle_attenuation = 0.7578583
 
 [node name="right_wide" type="SpotLight3D" parent="Node3D" unique_id=268111688]
-transform = Transform3D(0.9998815, -0.012430921, 0.009093864, -0.009986263, -0.07372043, 0.9972291, -0.011726071, -0.99720156, -0.073835835, 1.5359306, 12.41805, 0.6681126)
+transform = Transform3D(0.9998814, -0.012430921, 0.009093866, -0.011420212, -0.20219111, 0.97927964, -0.010334646, -0.9792673, -0.20230912, 1.5359306, 12.418879, 0.6693218)
 light_energy = 2.298
 light_indirect_energy = 0.0
 light_size = 1.0
@@ -75,9 +76,12 @@ spot_range = 12.037
 spot_attenuation = 0.24
 spot_angle = 65.0
 spot_angle_attenuation = 0.30778643
+script = ExtResource("10_nxq6l")
+rotation_magnitude = 10.0
+on_x = true
 
 [node name="left_wide" type="SpotLight3D" parent="Node3D" unique_id=1253003101]
-transform = Transform3D(0.99962145, 3.46053e-05, -0.027515274, 0.027442493, -0.07395245, 0.9968841, -0.0020003244, -0.99726176, -0.07392539, -1.1948884, 12.437482, 0.6565693)
+transform = Transform3D(0.99962145, 3.4605902e-05, -0.027515275, 0.026952628, -0.20242898, 0.978926, -0.0055360133, -0.979297, -0.20235327, -1.1948884, 12.436653, 0.6553601)
 light_energy = 2.298
 light_indirect_energy = 0.0
 light_size = 1.0
@@ -86,6 +90,10 @@ spot_range = 12.037
 spot_attenuation = 0.24
 spot_angle = 65.0
 spot_angle_attenuation = 0.30778643
+script = ExtResource("10_nxq6l")
+rotation_magnitude = 10.0
+rotation_speed = 1.2
+on_x = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1964526941]
 transform = Transform3D(0.90367943, -0.18186963, -0.3876687, 0, 0.9053244, -0.42472088, 0.42820975, 0.3838115, 0.818123, -2.3911505, 0.5604191, 5.657178)

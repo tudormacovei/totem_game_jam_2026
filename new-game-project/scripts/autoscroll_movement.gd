@@ -10,7 +10,7 @@ extends Node
 
 @export var animation_profile: Curve
 
-var SCROLL_TIME = 0.8
+var SCROLL_TIME = 1.5
 var PAUSE_TIME = 10.0
 
 enum ScrollState{

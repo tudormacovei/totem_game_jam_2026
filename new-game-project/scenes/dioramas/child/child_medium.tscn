@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_0r2fu"]
 [ext_resource type="PackedScene" uid="uid://cjvxowvc2fbv7" path="res://meshes/backgrounds/scene_school.glb" id="2_587qi"]
 [ext_resource type="PackedScene" uid="uid://cviyt3m7bgbl2" path="res://meshes/backgrounds/scene_school_burned.glb" id="3_i4i0u"]
+[ext_resource type="Texture2D" uid="uid://c1mo6p5yxjfmt" path="res://textures/no_education.webp" id="6_0r2fu"]
 [ext_resource type="Texture2D" uid="uid://fasbfrd3wmo" path="res://textures/baby.webp" id="7_i4i0u"]
 [ext_resource type="Texture2D" uid="uid://dkddttujrjp13" path="res://textures/education.webp" id="8_i4i0u"]
 
@@ -17,4 +18,4 @@ texture = ExtResource("7_i4i0u")
 texture = ExtResource("8_i4i0u")
 
 [node name="right_sprite" parent="." index="3" unique_id=219881718]
-texture = null
+texture = ExtResource("6_0r2fu")
