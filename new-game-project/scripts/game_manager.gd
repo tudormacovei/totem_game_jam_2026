@@ -70,9 +70,9 @@ func get_current_like_amount() -> int:
 	var like_multiplier = 10.0
 	return int(max(score_total * score_total * score_total * score_total * like_multiplier, 0))
 
-# placeholder
 func get_current_comment_amount() -> int:
-	return int(max(score_total, 0))
+	var comments_multiplier = 10 * get_tier_from_score(score_total)
+	return int(max(score_total * score_total * score_total * comments_multiplier, 0))
 
 # 0 -> 6: indifferent, 6->12 medium, 13+ extreme
 func get_current_score() -> int:
@@ -87,3 +87,15 @@ func set_focus(leverScore: LeverScore) -> void:
 	if current_lever_score != null:
 		current_lever_score.lever_area._on_focus_loss()
 	current_lever_score = leverScore
+
+func get_comment_rate_from_tier(tier: int) -> float:
+	var comment_rate_seconds = 0.5
+	if tier == 1:
+		comment_rate_seconds = 1
+	elif tier == 2:
+		comment_rate_seconds = 0.7
+	elif tier == 3:
+		comment_rate_seconds = 0.2
+	else:
+		comment_rate_seconds = 0.2
+	return comment_rate_seconds
