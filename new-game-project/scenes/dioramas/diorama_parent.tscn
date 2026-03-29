@@ -45,15 +45,51 @@ texture = ExtResource("9_clqti")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=7658653]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=656016501]
-transform = Transform3D(0.9912271, 0.034208093, -0.12766635, 0.13187414, -0.32056192, 0.93800277, -0.008837686, -0.9466097, -0.3222608, -2.230682, 11.582162, 0.10351652)
+[node name="left_tight" type="SpotLight3D" parent="Node3D" unique_id=656016501]
+transform = Transform3D(0.9768465, 0.060718674, -0.2051442, 0.17679442, -0.7690752, 0.6142207, -0.12047666, -0.6362676, -0.76200324, -1.9652957, 11.32977, -3.328945)
 light_energy = 20.0
 light_size = 1.0
 light_specular = 0.0
+spot_range = 14.495
+spot_attenuation = 0.87
+spot_angle = 30.0
+spot_angle_attenuation = 0.7578583
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Node3D" unique_id=1136289403]
-transform = Transform3D(0.9737962, -0.081387036, 0.21236108, -0.22725092, -0.31193954, 0.9225241, -0.008837682, -0.9466097, -0.32226077, 2.4374933, 11.6378975, 0.10351652)
+[node name="right_tight" type="SpotLight3D" parent="Node3D" unique_id=1136289403]
+transform = Transform3D(0.9737962, -0.081387, 0.21236111, -0.19758992, -0.76510835, 0.6128356, 0.11260241, -0.63873726, -0.7611409, 2.1588478, 11.324757, -3.306906)
 light_energy = 20.0
 light_size = 1.0
 light_specular = 0.0
+spot_range = 14.495
+spot_attenuation = 0.87
+spot_angle = 30.0
+spot_angle_attenuation = 0.7578583
+
+[node name="right_wide" type="SpotLight3D" parent="Node3D" unique_id=268111688]
+transform = Transform3D(0.9998815, -0.012430921, 0.009093864, -0.009986263, -0.07372043, 0.9972291, -0.011726071, -0.99720156, -0.073835835, 1.5359306, 12.41805, 0.6681126)
+light_energy = 2.298
+light_indirect_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+spot_range = 12.037
+spot_attenuation = 0.24
+spot_angle = 65.0
+spot_angle_attenuation = 0.30778643
+
+[node name="left_wide" type="SpotLight3D" parent="Node3D" unique_id=1253003101]
+transform = Transform3D(0.99962145, 3.46053e-05, -0.027515274, 0.027442493, -0.07395245, 0.9968841, -0.0020003244, -0.99726176, -0.07392539, -1.1948884, 12.437482, 0.6565693)
+light_energy = 2.298
+light_indirect_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+spot_range = 12.037
+spot_attenuation = 0.24
+spot_angle = 65.0
+spot_angle_attenuation = 0.30778643
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1964526941]
+transform = Transform3D(0.90367943, -0.18186963, -0.3876687, 0, 0.9053244, -0.42472088, 0.42820975, 0.3838115, 0.818123, -2.3911505, 0.5604191, 5.657178)
+light_specular = 0.0
+shadow_enabled = true
 spot_range = 10.0
+spot_angle = 30.0
