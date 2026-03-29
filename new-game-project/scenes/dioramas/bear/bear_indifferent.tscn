@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c00evs34iibob"]
 
-[ext_resource type="Script" path="res://scenes/lever_score.gd" id="1_i4u8l"]
-[ext_resource type="PackedScene" uid="uid://ca37ddhbhvgiw" path="res://meshes/backgrounds/scene_artic.glb" id="2_x5e7q"]
-[ext_resource type="PackedScene" uid="uid://bcg5dmxfhw74n" path="res://meshes/backgrounds/scene_bird_on_a_plate.glb" id="3_opd3p"]
+[ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_i4u8l"]
+[ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="2_mpep1"]
+[ext_resource type="PackedScene" uid="uid://bb7w7huncvfj" path="res://meshes/backgrounds/scene_river.glb" id="3_mpep1"]
 [ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="4_vyrvd"]
 [ext_resource type="Script" uid="uid://r2uqux5r88vc" path="res://scripts/lever.gd" id="5_78vsu"]
 [ext_resource type="PackedScene" uid="uid://qb88boj5jjb6" path="res://meshes/lever/lever.glb" id="6_pb1ea"]
@@ -15,8 +15,8 @@ size = Vector3(2.085, 7.8319507, 1)
 
 [node name="LeverScore" type="Node3D" unique_id=1795852748]
 script = ExtResource("1_i4u8l")
-background_left = ExtResource("2_x5e7q")
-background_right = ExtResource("3_opd3p")
+background_left = ExtResource("2_mpep1")
+background_right = ExtResource("3_mpep1")
 
 [node name="phone_box" parent="." unique_id=1580715568 instance=ExtResource("4_vyrvd")]
 
@@ -36,9 +36,9 @@ transform = Transform3D(-0.25, 0, -1.2577951e-07, 0, 0.25, 0, 3.774895e-08, 0, -
 texture = ExtResource("7_br2q1")
 
 [node name="left_sprite" type="Sprite3D" parent="." unique_id=1097870155]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.686187, 9.664286, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.686187, 9.664286, 0.788718)
 texture = ExtResource("8_68gim")
 
 [node name="right_sprite" type="Sprite3D" parent="." unique_id=219881718]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.8764423, 9.479885, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.8764423, 9.479885, 0.788718)
 texture = ExtResource("9_tydm7")

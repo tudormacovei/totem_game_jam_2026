@@ -34,7 +34,7 @@ transform = Transform3D(-0.25, 0, -1.2577951e-07, 0, 0.25, 0, 3.774895e-08, 0, -
 texture = ExtResource("7_i4i0u")
 
 [node name="left_sprite" type="Sprite3D" parent="." unique_id=1097870155]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.686187, 9.664286, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.686187, 9.664286, 0.7980249)
 texture = ExtResource("8_i4i0u")
 
 [node name="right_sprite" type="Sprite3D" parent="." unique_id=219881718]

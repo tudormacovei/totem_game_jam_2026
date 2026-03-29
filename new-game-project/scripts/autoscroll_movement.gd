@@ -3,8 +3,8 @@ extends Node
 @export var diorama_scenes: Array[PackedScene]
 @export var animation_profile: Curve
 
-@export var SCROLL_TIME = 1.5
-@export var PAUSE_TIME = 3.0
+var SCROLL_TIME = 1.5
+var PAUSE_TIME = 3.0
 
 enum ScrollState{
 	PAUSED,
@@ -52,11 +52,11 @@ func _add_diorama() -> void:
 
 	var diorama_node = diorama_scenes[next_diorama_index].instantiate()
 	add_child(diorama_node)
-	var top_position = Vector3(0, -diorama_scene_height, 0)
+	var bottom_position = Vector3(0, diorama_scene_height, 0)
 	if loaded_dioramas.size() > 0:
-		top_position = loaded_dioramas[loaded_dioramas.size() - 1].global_position
+		bottom_position = loaded_dioramas[loaded_dioramas.size() - 1].global_position
 	
-	diorama_node.global_position = top_position + Vector3(0, diorama_scene_height, 0)
+	diorama_node.global_position = bottom_position - Vector3(0, diorama_scene_height, 0)
 	loaded_dioramas.append(diorama_node)
 	next_diorama_index += 1
 
@@ -65,7 +65,7 @@ func _cleanup_diorama_stack() -> void:
 	var i = 0
 	while i < loaded_dioramas.size():
 		var obj = loaded_dioramas[i]
-		if obj.global_position.y < -20.0:
+		if obj.global_position.y > 20.0:
 			obj.queue_free()
 			loaded_dioramas.remove_at(i)
 		else:
@@ -80,6 +80,6 @@ func _animate_scroll(delta_time) -> void:
 	var delta_offset = _get_offset(x) - _get_offset(x_prev)
 	
 	for diorama_obj in loaded_dioramas:
-		diorama_obj.global_position.y -= delta_offset
+		diorama_obj.global_position.y += delta_offset
 	
 	_cleanup_diorama_stack()
