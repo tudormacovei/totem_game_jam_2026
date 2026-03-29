@@ -17,7 +17,7 @@ func _ready() -> void:
 
 	var fade_out_tween = create_tween()
 	if audio_player != null and audio_player.get("volume_db") != null:
-		fade_out_tween.parallel().tween_property(audio_player, "volume_db", -80.0, fade_duration)
+		fade_out_tween.parallel().tween_property(audio_player, "volume_db", -30.0, fade_duration)
 	fade_out_tween.tween_property(fade_rect, "modulate:a", 1.0, fade_duration)
 	await fade_out_tween.finished
 

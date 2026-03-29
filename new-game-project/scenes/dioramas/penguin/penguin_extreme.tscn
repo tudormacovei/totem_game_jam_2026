@@ -8,8 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://c475qf3n5duds" path="res://audio/sfx/penguin_artic.mp3" id="6_5vinf"]
 [ext_resource type="Texture2D" uid="uid://o6atrcbj5v8v" path="res://textures/penguin.png" id="7_5vinf"]
 [ext_resource type="Texture2D" uid="uid://b588rt1il6xef" path="res://textures/penguin_on_a_stick.png" id="8_myd28"]
+[ext_resource type="Texture2D" uid="uid://rrpn0m6smdlp" path="res://textures/snowflake.webp" id="9_5vinf"]
 
-[node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_rubg4")]
+[node name="@Node3D@63852" unique_id=1795852748 instance=ExtResource("1_rubg4")]
 background_left = ExtResource("2_wn8f8")
 background_right = ExtResource("3_5vinf")
 music = ExtResource("4_4ugvx")
@@ -26,4 +27,4 @@ texture = ExtResource("7_5vinf")
 texture = ExtResource("8_myd28")
 
 [node name="right_sprite" parent="." index="2" unique_id=219881718]
-texture = null
+texture = ExtResource("9_5vinf")

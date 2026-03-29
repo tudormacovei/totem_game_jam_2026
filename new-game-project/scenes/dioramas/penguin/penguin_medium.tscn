@@ -7,8 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://c475qf3n5duds" path="res://audio/sfx/penguin_artic.mp3" id="5_2boik"]
 [ext_resource type="AudioStream" uid="uid://v2v301c32rk6" path="res://audio/sfx/penguin_desert.mp3" id="6_i3udm"]
 [ext_resource type="Texture2D" uid="uid://o6atrcbj5v8v" path="res://textures/penguin.png" id="7_8id3f"]
+[ext_resource type="Texture2D" uid="uid://rrpn0m6smdlp" path="res://textures/snowflake.webp" id="8_8id3f"]
+[ext_resource type="Texture2D" uid="uid://ci6mjwma6qnw3" path="res://textures/sand_dunes.webp" id="9_1ybqu"]
 
-[node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_g62dc")]
+[node name="LeverScore2" unique_id=1795852748 instance=ExtResource("1_g62dc")]
 background_left = ExtResource("2_2boik")
 background_right = ExtResource("3_i3udm")
 music = ExtResource("4_g62dc")
@@ -22,7 +24,7 @@ intensity = 1
 texture = ExtResource("7_8id3f")
 
 [node name="left_sprite" parent="." index="1" unique_id=1097870155]
-texture = null
+texture = ExtResource("8_8id3f")
 
 [node name="right_sprite" parent="." index="2" unique_id=219881718]
-texture = null
+texture = ExtResource("9_1ybqu")
