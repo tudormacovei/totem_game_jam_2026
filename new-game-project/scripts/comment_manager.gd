@@ -17,7 +17,6 @@ var SCORE_TO_TIER_DICT := {
 var last_used := {} # Key: comment string, Value: timestamp
 
 func _process(_delta: float) -> void:
-	return # Disable for now
 	randomize()
 
 	var now := Time.get_unix_time_from_system()

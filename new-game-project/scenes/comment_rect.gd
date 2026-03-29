@@ -4,7 +4,7 @@ class_name Comment
 const PADDING = Vector2(100, 0)
 const RESTRICTED_POS_START = 280 * SCREEN_SIZE_SCALE # TODO These restrictions are not implemented right now. Comments only spawn on left side
 const RESTRICTED_POS_END = 1100
-const COMMENT_LIFETIME = 10.0
+const COMMENT_LIFETIME = 5
 
 const SCREEN_SIZE_SCALE = 14
 
@@ -34,12 +34,12 @@ func init_comment() -> void:
 	anim_player.play("popup")
 	print("Comment position: ", position)
 
-	# var timer = Timer.new()
-	# add_child(timer)
-	# timer.wait_time = COMMENT_LIFETIME
-	# timer.one_shot = true
-	# timer.connect("timeout", Callable(self , "queue_free"))
-	# timer.start()
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = COMMENT_LIFETIME
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self , "_on_timer_timeout"))
+	timer.start()
 
 func init_comment_text(text: String) -> void:
 	comment_text = text
@@ -67,3 +67,8 @@ func _get_random_position() -> Vector2:
 func is_on_left_side() -> bool:
 	var screen_width = get_tree().root.get_visible_rect().size.x * SCREEN_SIZE_SCALE
 	return position.x < screen_width * 0.5
+
+func _on_timer_timeout() -> void:
+	anim_player.play_backwards("popup")
+	await get_tree().create_timer(10.0).timeout
+	queue_free()
