@@ -21,7 +21,6 @@ func init_comment() -> void:
 	await get_tree().process_frame
 	label.text = comment_text
 	await get_tree().process_frame
-	print("Comment size: ", label.size)
 	self.size = label.size + PADDING
 	position = _get_new_position()
 	if not is_on_left_side(): # This check works but the flip of the sprite doesn't for some reason. FOR NOW: only spawn on left side
@@ -31,7 +30,6 @@ func init_comment() -> void:
 
 	self.show()
 	anim_player.play("popup")
-	print("Comment position: ", position)
 
 	var timer = Timer.new()
 	add_child(timer)
