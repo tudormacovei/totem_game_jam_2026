@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c4x757cwgjg83" path="res://meshes/backgrounds/scene_cave.glb" id="2_qpfoa"]
 [ext_resource type="PackedScene" uid="uid://dlpiw76f3hv1b" path="res://meshes/backgrounds/scene_house.glb" id="3_chb1w"]
 [ext_resource type="AudioStream" uid="uid://dye1wh2tyg1bu" path="res://audio/music/baby_extreme.mp3" id="4_5hll5"]
+[ext_resource type="AudioStream" uid="uid://cj5uvbsf1imf4" path="res://audio/sfx/child_bearANDcircus.mp3" id="5_chb1w"]
+[ext_resource type="AudioStream" uid="uid://cducvbvpg16jh" path="res://audio/sfx/child_educationANDtoyANDwater.mp3" id="6_5audv"]
 [ext_resource type="Texture2D" uid="uid://fasbfrd3wmo" path="res://textures/baby.webp" id="7_chb1w"]
 [ext_resource type="Texture2D" uid="uid://dibwopjc86yqk" path="res://textures/bear angry.webp" id="8_5audv"]
 [ext_resource type="Texture2D" uid="uid://n4jxxoj1i5lj" path="res://textures/toys.png" id="9_0rfjm"]
@@ -12,6 +14,8 @@
 background_left = ExtResource("2_qpfoa")
 background_right = ExtResource("3_chb1w")
 music = ExtResource("4_5hll5")
+left_sound = ExtResource("5_chb1w")
+right_sound = ExtResource("6_5audv")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_chb1w")

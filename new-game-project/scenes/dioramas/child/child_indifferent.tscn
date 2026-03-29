@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://5s1bfm8551g6" path="res://meshes/backgrounds/scene_meat_on_plate.glb" id="3_rwfmu"]
 [ext_resource type="AudioStream" uid="uid://baqwfy2kc8oty" path="res://audio/music/baby_indifferent.mp3" id="4_tmdu1"]
 [ext_resource type="Texture2D" uid="uid://fasbfrd3wmo" path="res://textures/baby.webp" id="4_woret"]
+[ext_resource type="AudioStream" uid="uid://q4adpb4wys5h" path="res://audio/sfx/child_veggieANDmeat.mp3" id="5_6yhua"]
 [ext_resource type="Texture2D" uid="uid://d1rpvh6jcypag" path="res://textures/veggies.png" id="5_rwfmu"]
 [ext_resource type="Texture2D" uid="uid://clqvpk1n1tlbp" path="res://textures/meat.png" id="6_2yd61"]
 
@@ -12,6 +13,8 @@
 background_left = ExtResource("2_woret")
 background_right = ExtResource("3_rwfmu")
 music = ExtResource("4_tmdu1")
+left_sound = ExtResource("5_6yhua")
+right_sound = ExtResource("5_6yhua")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("4_woret")

@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="2_aulpn"]
 [ext_resource type="PackedScene" uid="uid://dfhlnma3678dx" path="res://meshes/backgrounds/scene_factory.glb" id="2_qxjbd"]
 [ext_resource type="AudioStream" uid="uid://b8e07hmyqbgmv" path="res://audio/music/bear_extreme.mp3" id="4_moooj"]
+[ext_resource type="AudioStream" uid="uid://dttp0ce3j0x3" path="res://audio/sfx/bear_poison.mp3" id="5_qxjbd"]
+[ext_resource type="AudioStream" uid="uid://tuel0v3hboes" path="res://audio/sfx/bear_honeyANDfishANDforest.mp3" id="6_aulpn"]
 [ext_resource type="Texture2D" uid="uid://dbq6jusmbsin4" path="res://textures/honey.webp" id="8_aulpn"]
 [ext_resource type="Texture2D" uid="uid://b1jogr34a60rl" path="res://textures/poision1.png" id="9_5inub"]
 
@@ -11,6 +13,8 @@
 background_left = ExtResource("2_qxjbd")
 background_right = ExtResource("2_aulpn")
 music = ExtResource("4_moooj")
+left_sound = ExtResource("5_qxjbd")
+right_sound = ExtResource("6_aulpn")
 
 [node name="left_sprite" parent="." index="1" unique_id=1097870155]
 texture = ExtResource("9_5inub")

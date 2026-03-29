@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dlpiw76f3hv1b" path="res://meshes/backgrounds/scene_house.glb" id="2_hq2wg"]
 [ext_resource type="AudioStream" uid="uid://cr284lbeulml2" path="res://audio/music/water_medium.mp3" id="4_1il2x"]
 [ext_resource type="Texture2D" uid="uid://c72gppak68ujc" path="res://textures/plant.png" id="5_7ic2u"]
+[ext_resource type="AudioStream" uid="uid://cducvbvpg16jh" path="res://audio/sfx/child_educationANDtoyANDwater.mp3" id="5_hq2wg"]
+[ext_resource type="AudioStream" uid="uid://up3gjyfdjoet" path="res://audio/sfx/water_plant.mp3" id="6_ba3o5"]
 [ext_resource type="Texture2D" uid="uid://bfrmfijiybbh2" path="res://textures/bottle of water.webp" id="7_4ddty"]
 [ext_resource type="Texture2D" uid="uid://fasbfrd3wmo" path="res://textures/baby.webp" id="8_ba3o5"]
 
@@ -12,6 +14,8 @@
 background_left = ExtResource("2_hq2wg")
 background_right = ExtResource("2_ba3o5")
 music = ExtResource("4_1il2x")
+left_sound = ExtResource("5_hq2wg")
+right_sound = ExtResource("6_ba3o5")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_4ddty")

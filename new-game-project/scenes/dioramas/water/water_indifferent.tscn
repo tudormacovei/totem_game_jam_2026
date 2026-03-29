@@ -4,14 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://cpj62y30qdte1" path="res://meshes/backgrounds/scene_plants.glb" id="2_7soc0"]
 [ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="3_keohw"]
 [ext_resource type="AudioStream" uid="uid://kewavsse77ic" path="res://audio/music/water_indifferent.mp3" id="4_cmpef"]
+[ext_resource type="AudioStream" uid="uid://up3gjyfdjoet" path="res://audio/sfx/water_plant.mp3" id="5_7soc0"]
 [ext_resource type="Texture2D" uid="uid://c72gppak68ujc" path="res://textures/plant.png" id="5_56ccd"]
 [ext_resource type="Texture2D" uid="uid://dh2w4b73kxyf6" path="res://textures/baby_goose.png" id="6_cmpef"]
+[ext_resource type="AudioStream" uid="uid://bswm241mglj4a" path="res://audio/sfx/water_animal.mp3" id="6_keohw"]
 [ext_resource type="Texture2D" uid="uid://bfrmfijiybbh2" path="res://textures/bottle of water.webp" id="7_7soc0"]
 
 [node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_4k4id")]
 background_left = ExtResource("2_7soc0")
 background_right = ExtResource("3_keohw")
 music = ExtResource("4_cmpef")
+left_sound = ExtResource("5_7soc0")
+right_sound = ExtResource("6_keohw")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_7soc0")

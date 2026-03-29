@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bcg5dmxfhw74n" path="res://meshes/backgrounds/scene_bird_on_a_plate.glb" id="3_enqu4"]
 [ext_resource type="PackedScene" uid="uid://dlpiw76f3hv1b" path="res://meshes/backgrounds/scene_house.glb" id="3_pqt0r"]
 [ext_resource type="AudioStream" uid="uid://bp31l5rggdubt" path="res://audio/music/goose_extreme.mp3" id="4_00gpe"]
+[ext_resource type="AudioStream" uid="uid://c4xqcxwrulxjp" path="res://audio/sfx/goose_food.mp3" id="5_pqt0r"]
 [ext_resource type="Texture2D" uid="uid://dh2w4b73kxyf6" path="res://textures/baby_goose.png" id="6_1cja0"]
+[ext_resource type="AudioStream" uid="uid://bfqf40eoyxv14" path="res://audio/sfx/goose_kids.mp3" id="6_opor5"]
 [ext_resource type="Texture2D" uid="uid://dwhxqshpcn7x2" path="res://textures/goose normal.webp" id="7_pqt0r"]
 [ext_resource type="Texture2D" uid="uid://csnkfmdirdv0a" path="res://textures/knife_fork2.png" id="8_opor5"]
 
@@ -12,6 +14,8 @@
 background_left = ExtResource("3_enqu4")
 background_right = ExtResource("3_pqt0r")
 music = ExtResource("4_00gpe")
+left_sound = ExtResource("5_pqt0r")
+right_sound = ExtResource("6_opor5")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_pqt0r")
