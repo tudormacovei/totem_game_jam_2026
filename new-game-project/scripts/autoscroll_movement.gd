@@ -13,18 +13,18 @@ extends Node
 var SCROLL_TIME = 1.5
 var PAUSE_TIME = 10.0
 
-enum ScrollState{
+enum ScrollState {
 	PAUSED,
 	SCROLLING
 }
 
-var _state : ScrollState
-var _time_in_current_state : float
+var _state: ScrollState
+var _time_in_current_state: float
 
 var diorama_scene_height = 12.6
 
 var loaded_dioramas: Array[LeverScore] = []
-var next_diorama_index : int = 0
+var next_diorama_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,12 +59,14 @@ func _process(delta: float) -> void:
 func _add_diorama() -> void:
 	var diorama_node: LeverScore
 	var choice_float = randf() # the higher the value the greater the change of a high chaos choice
-	if GameManager.get_current_score() < 6:
+	var score = GameManager.get_current_score()
+	var tier = GameManager.get_tier_from_score(score)
+	if tier == 1:
 		choice_float = indifferent_curve.sample(choice_float)
-	elif GameManager.get_current_score() <= 12:
+	elif tier == 2:
 		choice_float = medium_curve.sample(choice_float)
 	else:
-		choice_float = extreme_curve.sample(choice_float) 
+		choice_float = extreme_curve.sample(choice_float)
 	
 	#print("Choice float value: " + str(choice_float))
 	if choice_float < 0.33:
