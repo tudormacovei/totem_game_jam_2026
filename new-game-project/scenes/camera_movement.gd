@@ -12,9 +12,8 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
-			var pos_pixel = event.position
 			var pos_normalized = event.position / get_viewport().get_visible_rect().size
 			pos_normalized -= Vector2(0.5, 0.5)
-			var pos_offset = Vector3(pos_normalized.x, pos_normalized.y, 0)
+			var pos_offset = Vector3(pos_normalized.x * 0.25, pos_normalized.y * 0.1, 0)
 			
 			global_position = original_pos + pos_offset

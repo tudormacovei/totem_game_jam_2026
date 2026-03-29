@@ -64,8 +64,8 @@ func get_tier_from_score(score: int) -> int:
 	return MAX_TIER
 
 func get_current_like_amount() -> int:
-	var like_multiplier = 2.0
-	return int(max(score_total * like_multiplier, 0))
+	var like_multiplier = 10.0
+	return int(max(score_total * score_total * score_total * score_total * like_multiplier, 0))
 
 # placeholder
 func get_current_comment_amount() -> int:
