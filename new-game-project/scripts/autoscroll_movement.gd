@@ -54,8 +54,6 @@ func _process(delta: float) -> void:
 ## Add a diorama to the stack, at the top.
 ## Does not modify the position of current objects in the stack
 func _add_diorama() -> void:
-	# SPAWN DIORAMA
-
 	var diorama_node: Node3D
 	var choice_float = randf() # the higher the value the greater the change of a high chaos choice
 	if GameManager.get_current_score() < 6:
@@ -65,7 +63,7 @@ func _add_diorama() -> void:
 	else:
 		choice_float = extreme_curve.sample(choice_float) 
 	
-	print("Choice float value: " + str(choice_float))
+	#print("Choice float value: " + str(choice_float))
 	if choice_float < 0.33:
 		var choice_idx = randi() % 5
 		diorama_node = diorama_scenes_indifferent[choice_idx].instantiate() as Node3D

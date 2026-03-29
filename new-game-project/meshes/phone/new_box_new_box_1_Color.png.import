@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbdi6q5mr63k"
-path="res://.godot/imported/phone_box_phone_box_9Set_Color.png-e14be771003ec236e52ef84dd234a211.ctex"
+uid="uid://ut615ogp1vwt"
+path="res://.godot/imported/new_box_new_box_1_Color.png-252b967dfbf0ea39879c6a5bbecdbc83.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "cca3230dc62694551fd4753c7eff8813"
+"md5": "011a2e582b921ba19495e398242ef0c6"
 }
 
 [deps]
 
-source_file="res://meshes/phone/phone_box_phone_box_9Set_Color.png"
-dest_files=["res://.godot/imported/phone_box_phone_box_9Set_Color.png-e14be771003ec236e52ef84dd234a211.ctex"]
+source_file="res://meshes/phone/new_box_new_box_1_Color.png"
+dest_files=["res://.godot/imported/new_box_new_box_1_Color.png-252b967dfbf0ea39879c6a5bbecdbc83.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

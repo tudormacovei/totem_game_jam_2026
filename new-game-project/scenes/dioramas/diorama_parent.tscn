@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://bd0w34b1hadno" path="res://scenes/lever_score.gd" id="1_gtncw"]
 [ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="2_hiw6h"]
 [ext_resource type="PackedScene" uid="uid://bb7w7huncvfj" path="res://meshes/backgrounds/scene_river.glb" id="3_y4sfp"]
-[ext_resource type="PackedScene" uid="uid://doa03xmdh6s0v" path="res://meshes/phone/phone_box.glb" id="4_nka4x"]
 [ext_resource type="Script" uid="uid://r2uqux5r88vc" path="res://scripts/lever.gd" id="5_if5j7"]
 [ext_resource type="PackedScene" uid="uid://qb88boj5jjb6" path="res://meshes/lever/lever.glb" id="6_6qbvk"]
 [ext_resource type="Texture2D" uid="uid://ba7el6asifhcp" path="res://textures/bear normal.webp" id="7_qfx1d"]
 [ext_resource type="Texture2D" uid="uid://dbq6jusmbsin4" path="res://textures/honey.webp" id="8_7kxr1"]
 [ext_resource type="Texture2D" uid="uid://dpn1xe6bwheht" path="res://textures/fish.webp" id="9_clqti"]
+[ext_resource type="PackedScene" uid="uid://clknjcuxs3os" path="res://meshes/phone/new_box.glb" id="10_c5756"]
 [ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="10_nxq6l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
@@ -18,8 +18,6 @@ size = Vector3(2.085, 7.8319507, 1)
 script = ExtResource("1_gtncw")
 background_left = ExtResource("2_hiw6h")
 background_right = ExtResource("3_y4sfp")
-
-[node name="phone_box" parent="." unique_id=1580715568 instance=ExtResource("4_nka4x")]
 
 [node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)
@@ -101,3 +99,5 @@ light_specular = 0.0
 shadow_enabled = true
 spot_range = 10.0
 spot_angle = 30.0
+
+[node name="new_box" parent="." unique_id=1471089271 instance=ExtResource("10_c5756")]

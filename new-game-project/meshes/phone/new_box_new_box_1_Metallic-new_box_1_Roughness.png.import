@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clb54xtgkreo6"
-path="res://.godot/imported/phone_box_phone_box_9Set_Metallic-phone_box_9Set_Roughness.png-9b43405398d411e9f354ce189d50bc97.ctex"
+uid="uid://cj8723rorvqud"
+path="res://.godot/imported/new_box_new_box_1_Metallic-new_box_1_Roughness.png-7d56dea8244deeddf8f99183b857cab4.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "4c3dc9719ab25f74a8409a768234ae68"
+"md5": "554ecb003541bb2369704335cfd219fc"
 }
 
 [deps]
 
-source_file="res://meshes/phone/phone_box_phone_box_9Set_Metallic-phone_box_9Set_Roughness.png"
-dest_files=["res://.godot/imported/phone_box_phone_box_9Set_Metallic-phone_box_9Set_Roughness.png-9b43405398d411e9f354ce189d50bc97.ctex"]
+source_file="res://meshes/phone/new_box_new_box_1_Metallic-new_box_1_Roughness.png"
+dest_files=["res://.godot/imported/new_box_new_box_1_Metallic-new_box_1_Roughness.png-7d56dea8244deeddf8f99183b857cab4.ctex"]
 
 [params]
 
