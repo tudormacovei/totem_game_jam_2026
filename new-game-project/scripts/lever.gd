@@ -4,7 +4,7 @@ extends Area3D
 @export var intensity: GameManager.Intensity = GameManager.Intensity.LOW
 
 @onready var snap_to_completion_curve: Curve = preload("res://resources/curves/anim_lever_snap_curve.tres")
-@onready var mesh: MeshInstance3D = $LeverMesh/box_22
+@onready var mesh: MeshInstance3D = $LeverMesh/lever_2
 
 var normal_mat: Material
 var outline_mat: Material = preload("res://materials/outline.tres")
