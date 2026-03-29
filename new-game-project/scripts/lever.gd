@@ -16,7 +16,14 @@ var SNAP_ANIM_DURATION := 0.4
 var SCALE_TWEEN_SPEED := 12.0
 var SCALE_MAX_SIZE = 1.05
 var SCALE_PRESSED_SIZE = 1.025
+var ATTENTION_PULSE_SIZE = 1.025
+var ATTENTION_PULSE_DURATION = 0.25
+var TIME_UNTIL_ATTENTION_PULSE = 10
 var zone_to_positivity_dict := {} # Populated at runtime based on is_left_zone_positive
+
+# Tutorial variables
+var time_no_choice = 0
+var has_clicked_once := false
 
 # State variables
 var rotating := false
@@ -30,6 +37,7 @@ var end_z = null
 var t := 0.0
 var is_playing_snap_anim := false
 var has_focus: bool = false
+var attention_pulse_tween: Tween
 
 # Zones are calculated by dividing area (-rot_delta_max, rot_delta_max) into 3 equally sized zones
 # Zones: 1 - Left, 2 - Center, 3 - Right
@@ -45,6 +53,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_set_scale(delta)
+
+	if GameManager.in_tutorial and not has_clicked_once:
+		time_no_choice += delta
+
+		if time_no_choice > TIME_UNTIL_ATTENTION_PULSE and not is_mouse_over and not rotating:
+			_start_attention_pulse()
+		else:
+			_stop_attention_pulse()
+	else:
+		_stop_attention_pulse()
 
 	if is_playing_snap_anim:
 		t += delta / SNAP_ANIM_DURATION
@@ -64,6 +82,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and is_mouse_over:
+				has_clicked_once = true
+				_stop_attention_pulse()
 				rotating = true
 				last_mouse_pos = event.position
 				GameManager.update_intensity(intensity)
@@ -82,6 +102,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_mouse_entered() -> void:
 	is_mouse_over = true
+	_stop_attention_pulse()
 	#mesh.set_surface_override_material(0, outline_mat)
 
 func _on_mouse_exited() -> void:
@@ -92,6 +113,10 @@ func _on_mouse_exited() -> void:
 func _set_scale(delta: float) -> void:
 	if not has_focus:
 		return
+
+	if _is_attention_pulsing() and not is_mouse_over and not rotating:
+		return
+
 	var target_scale := Vector3.ONE
 
 	if is_mouse_over:
@@ -102,6 +127,25 @@ func _set_scale(delta: float) -> void:
 
 	var weight = 1.0 - exp(-SCALE_TWEEN_SPEED * delta)
 	scale = scale.lerp(target_scale, weight)
+
+func _start_attention_pulse() -> void:
+	if not has_focus or is_complete or _is_attention_pulsing():
+		return
+
+	attention_pulse_tween = create_tween()
+	attention_pulse_tween.set_loops()
+	attention_pulse_tween.set_trans(Tween.TRANS_SINE)
+	attention_pulse_tween.set_ease(Tween.EASE_IN_OUT)
+	attention_pulse_tween.tween_property(self, "scale", Vector3.ONE * ATTENTION_PULSE_SIZE, ATTENTION_PULSE_DURATION)
+	attention_pulse_tween.tween_property(self, "scale", Vector3.ONE, ATTENTION_PULSE_DURATION)
+
+func _stop_attention_pulse() -> void:
+	if attention_pulse_tween != null:
+		attention_pulse_tween.kill()
+		attention_pulse_tween = null
+
+func _is_attention_pulsing() -> bool:
+	return attention_pulse_tween != null
 
 func _rotate_lever(delta_z: float):
 	var rot = rotation_degrees
@@ -160,6 +204,7 @@ func _on_focus_loss() -> void:
 	if is_complete:
 		return
 	
+	_stop_attention_pulse()
 	is_complete = true
 	has_focus = false
 	_on_mouse_exited() # force mouse exit event

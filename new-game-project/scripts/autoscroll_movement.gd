@@ -36,7 +36,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_time_in_current_state += delta
+
+	if not GameManager.in_tutorial:
+		_time_in_current_state += delta
+
 	if _state == ScrollState.SCROLLING and _time_in_current_state > SCROLL_TIME:
 		_animate_scroll(delta)
 		

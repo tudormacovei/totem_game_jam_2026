@@ -14,7 +14,7 @@ enum Intensity {
 	HIGH
 }
 
-var is_menu = true
+var in_tutorial = true
 
 var SCORE_PER_LEVER = 1 # How many points are awarded for completing a scenario?
 var score_total := 0
@@ -33,6 +33,8 @@ func update_intensity(intensity: Intensity) -> void:
 
 func on_lever_completed(zone_positivity: bool) -> void:
 	# TODO: Implement usless scenarios
+	in_tutorial = false
+
 	score_total += (1 if zone_positivity else -1) * SCORE_PER_LEVER
 	print("Lever completed. Score: %d" % score_total)
 	lever_completed.emit()
@@ -40,6 +42,7 @@ func on_lever_completed(zone_positivity: bool) -> void:
 func change_music(music: AudioStream) -> void:
 	if music_player == null:
 		music_player = AudioStreamPlayer.new()
+		music_player.finished.connect(music_player.play)
 		add_child(music_player)
 
 	music_player.stream = music
