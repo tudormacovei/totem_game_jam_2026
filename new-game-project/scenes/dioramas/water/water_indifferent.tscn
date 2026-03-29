@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_4k4id"]
 [ext_resource type="PackedScene" uid="uid://cpj62y30qdte1" path="res://meshes/backgrounds/scene_plants.glb" id="2_7soc0"]
 [ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="3_keohw"]
+[ext_resource type="AudioStream" uid="uid://kewavsse77ic" path="res://audio/music/water_indifferent.mp3" id="4_cmpef"]
 [ext_resource type="Texture2D" uid="uid://c72gppak68ujc" path="res://textures/plant.png" id="5_56ccd"]
 [ext_resource type="Texture2D" uid="uid://dh2w4b73kxyf6" path="res://textures/baby_goose.png" id="6_cmpef"]
 [ext_resource type="Texture2D" uid="uid://bfrmfijiybbh2" path="res://textures/bottle of water.webp" id="7_7soc0"]
@@ -10,12 +11,13 @@
 [node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_4k4id")]
 background_left = ExtResource("2_7soc0")
 background_right = ExtResource("3_keohw")
+music = ExtResource("4_cmpef")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_7soc0")
 
-[node name="left_sprite" parent="." index="2" unique_id=1097870155]
+[node name="left_sprite" parent="." index="1" unique_id=1097870155]
 texture = ExtResource("5_56ccd")
 
-[node name="right_sprite" parent="." index="3" unique_id=219881718]
+[node name="right_sprite" parent="." index="2" unique_id=219881718]
 texture = ExtResource("6_cmpef")

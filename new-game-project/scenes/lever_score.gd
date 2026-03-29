@@ -2,6 +2,7 @@ class_name LeverScore extends Node3D
 
 @export var background_left: PackedScene
 @export var background_right: PackedScene
+@export var music: AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,8 @@ func _ready() -> void:
 	add_child(bg_right_obj)
 	bg_left_obj.global_position = Vector3(-1.6, 0.3, 0.0)
 	bg_right_obj.global_position = Vector3(1.6, 0.3, 0.0)
+
+	GameManager.change_music(music)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

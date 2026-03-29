@@ -3,15 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_k7qar"]
 [ext_resource type="PackedScene" uid="uid://cfmcaccjiyvvj" path="res://meshes/backgrounds/scene_forest.glb" id="2_aulpn"]
 [ext_resource type="PackedScene" uid="uid://dfhlnma3678dx" path="res://meshes/backgrounds/scene_factory.glb" id="2_qxjbd"]
+[ext_resource type="AudioStream" uid="uid://b8e07hmyqbgmv" path="res://audio/music/bear_extreme.mp3" id="4_moooj"]
 [ext_resource type="Texture2D" uid="uid://dbq6jusmbsin4" path="res://textures/honey.webp" id="8_aulpn"]
 [ext_resource type="Texture2D" uid="uid://b1jogr34a60rl" path="res://textures/poision1.png" id="9_5inub"]
 
 [node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_k7qar")]
 background_left = ExtResource("2_qxjbd")
 background_right = ExtResource("2_aulpn")
+music = ExtResource("4_moooj")
 
-[node name="left_sprite" parent="." index="2" unique_id=1097870155]
+[node name="left_sprite" parent="." index="1" unique_id=1097870155]
 texture = ExtResource("9_5inub")
 
-[node name="right_sprite" parent="." index="3" unique_id=219881718]
+[node name="right_sprite" parent="." index="2" unique_id=219881718]
 texture = ExtResource("8_aulpn")

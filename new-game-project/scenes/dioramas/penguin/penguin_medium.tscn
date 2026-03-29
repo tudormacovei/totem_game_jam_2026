@@ -3,17 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_g62dc"]
 [ext_resource type="PackedScene" uid="uid://ca37ddhbhvgiw" path="res://meshes/backgrounds/scene_artic.glb" id="2_2boik"]
 [ext_resource type="PackedScene" uid="uid://d1p3ccvs3e2ek" path="res://meshes/backgrounds/scene_dessert.glb" id="3_i3udm"]
+[ext_resource type="AudioStream" uid="uid://ithcbifpshmp" path="res://audio/music/goose_medium.mp3" id="4_g62dc"]
 [ext_resource type="Texture2D" uid="uid://o6atrcbj5v8v" path="res://textures/penguin.png" id="7_8id3f"]
 
 [node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_g62dc")]
 background_left = ExtResource("2_2boik")
 background_right = ExtResource("3_i3udm")
+music = ExtResource("4_g62dc")
 
 [node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
 texture = ExtResource("7_8id3f")
 
-[node name="left_sprite" parent="." index="2" unique_id=1097870155]
+[node name="left_sprite" parent="." index="1" unique_id=1097870155]
 texture = null
 
-[node name="right_sprite" parent="." index="3" unique_id=219881718]
+[node name="right_sprite" parent="." index="2" unique_id=219881718]
 texture = null

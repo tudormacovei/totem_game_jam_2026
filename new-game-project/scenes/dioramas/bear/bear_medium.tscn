@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://byqafy3fnhgw4"]
 
 [ext_resource type="PackedScene" uid="uid://dy0wb2w0wuqsa" path="res://scenes/dioramas/diorama_parent.tscn" id="1_vw1bw"]
+[ext_resource type="AudioStream" uid="uid://csl1er0dg08pb" path="res://audio/music/baby_medium.mp3" id="3_q44xk"]
 [ext_resource type="PackedScene" uid="uid://beorcjam3amoi" path="res://meshes/backgrounds/scene_fire.glb" id="3_usrhe"]
 [ext_resource type="Texture2D" uid="uid://pit04f48oag3" path="res://textures/circus.webp" id="8_67blp"]
 
 [node name="LeverScore" unique_id=1795852748 instance=ExtResource("1_vw1bw")]
 background_right = ExtResource("3_usrhe")
+music = ExtResource("3_q44xk")
 
-[node name="left_sprite" parent="." index="2" unique_id=1097870155]
+[node name="left_sprite" parent="." index="1" unique_id=1097870155]
 texture = null
 
-[node name="right_sprite" parent="." index="3" unique_id=219881718]
+[node name="right_sprite" parent="." index="2" unique_id=219881718]
 texture = ExtResource("8_67blp")
