@@ -160,7 +160,7 @@ func _try_complete_lever():
 
 	if zone == 1 or zone == 3:
 		GameManager.play_sound(zone == 1)
-		GameManager.on_lever_completed(zone_to_positivity_dict[zone])
+		GameManager.on_lever_completed(zone_to_positivity_dict[zone], self)
 		is_complete = true
 		mesh.set_surface_override_material(0, normal_mat)
 		return

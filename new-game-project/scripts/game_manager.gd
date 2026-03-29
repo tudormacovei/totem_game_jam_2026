@@ -28,14 +28,22 @@ var sound_effect_player: AudioStreamPlayer
 
 signal lever_completed
 
+
 func update_intensity(intensity: Intensity) -> void:
 	current_intensity = intensity
 
-func on_lever_completed(zone_positivity: bool) -> void:
-	# TODO: Implement usless scenarios
-	in_tutorial = false
 
-	score_total += (1 if zone_positivity else -1) * SCORE_PER_LEVER
+func on_lever_completed(zone_positivity: bool, lever: Lever) -> void:
+	var score_multiplier: float = 0.0
+	if lever.intensity == Intensity.LOW:
+		score_multiplier = 0.0
+	elif lever.intensity == Intensity.MEDIUM:
+		score_multiplier = 1.0
+	else:
+		score_multiplier = 3.0
+
+	score_total += (-1 if zone_positivity else +1) * SCORE_PER_LEVER * score_multiplier
+	score_total = max(score_total, 0)
 	print("Lever completed. Score: %d" % score_total)
 	lever_completed.emit()
 
