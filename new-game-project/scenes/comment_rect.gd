@@ -1,7 +1,7 @@
 extends NinePatchRect
 class_name Comment
 
-const PADDING = Vector2(100, 0)
+const PADDING = Vector2(200, 0)
 const RESTRICTED_POS_START = 280 * SCREEN_SIZE_SCALE # TODO These restrictions are not implemented right now. Comments only spawn on left side
 const RESTRICTED_POS_END = 1100
 const COMMENT_LIFETIME = 5
@@ -13,8 +13,6 @@ const SCREEN_SIZE_SCALE = 14
 
 var comment_text: String = ""
 
-# TODO dissapear after time
-
 func _ready() -> void:
 	if comment_text != "":
 		call_deferred("init_comment")
@@ -23,6 +21,7 @@ func init_comment() -> void:
 	await get_tree().process_frame
 	label.text = comment_text
 	await get_tree().process_frame
+	print("Comment size: ", label.size)
 	self.size = label.size + PADDING
 	position = _get_new_position()
 	if not is_on_left_side(): # This check works but the flip of the sprite doesn't for some reason. FOR NOW: only spawn on left side

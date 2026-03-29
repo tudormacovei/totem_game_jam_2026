@@ -2,7 +2,7 @@ extends Node3D
 
 @export var general_pool: CommentPool
 @export var cooldown_seconds := 3 # How long to wait before using a comment again
-@export var comment_rate_seconds := 1 # How often comments show up
+@export var comment_rate_seconds := .5 # How often comments show up
 @export var comment_scene: PackedScene
 
 @onready var ui_layer: CanvasLayer = %UILayer
