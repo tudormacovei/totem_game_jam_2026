@@ -80,11 +80,4 @@ func _spawn_comment(text: String) -> void:
 		return
 
 func update_comment_rate() -> void:
-	if cur_tier == 1:
-		comment_rate_seconds = 1
-	elif cur_tier == 2:
-		comment_rate_seconds = 0.7
-	elif cur_tier == 3:
-		comment_rate_seconds = 0.2
-	else:
-		comment_rate_seconds = 0.2
+	comment_rate_seconds = GameManager.get_comment_rate_from_tier(cur_tier)
