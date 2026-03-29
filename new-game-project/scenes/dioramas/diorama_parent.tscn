@@ -14,10 +14,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7eprb"]
 size = Vector3(2.085, 7.8319507, 1)
 
-[node name="LeverScore" type="Node3D" unique_id=1795852748]
+[node name="LeverScore" type="Node3D" unique_id=1795852748 node_paths=PackedStringArray("lever_area")]
 script = ExtResource("1_gtncw")
 background_left = ExtResource("2_hiw6h")
 background_right = ExtResource("3_y4sfp")
+lever_area = NodePath("LeverArea3D")
 
 [node name="LeverArea3D" type="Area3D" parent="." unique_id=1641671795]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.13250852, 0.64178145)

@@ -1,4 +1,4 @@
-extends Area3D
+class_name Lever extends Area3D
 
 @export var is_left_zone_positive := true
 @export var intensity: GameManager.Intensity = GameManager.Intensity.LOW
@@ -29,6 +29,7 @@ var start_z = null
 var end_z = null
 var t := 0.0
 var is_playing_snap_anim := false
+var has_focus: bool = false
 
 # Zones are calculated by dividing area (-rot_delta_max, rot_delta_max) into 3 equally sized zones
 # Zones: 1 - Left, 2 - Center, 3 - Right
@@ -57,7 +58,7 @@ func _process(delta: float) -> void:
 			return
 
 func _input(event: InputEvent) -> void:
-	if is_complete:
+	if not is_active():
 		return
 
 	if event is InputEventMouseButton:
@@ -80,21 +81,17 @@ func _input(event: InputEvent) -> void:
 		last_mouse_pos = event.position
 
 func _on_mouse_entered() -> void:
-	if is_complete:
-		return
-
 	is_mouse_over = true
 	#mesh.set_surface_override_material(0, outline_mat)
 
 func _on_mouse_exited() -> void:
-	if is_complete:
-		return
-
 	is_mouse_over = false
 	if not rotating:
 		mesh.set_surface_override_material(0, normal_mat)
 
 func _set_scale(delta: float) -> void:
+	if not has_focus:
+		return
 	var target_scale := Vector3.ONE
 
 	if is_mouse_over:
@@ -150,3 +147,19 @@ func _get_zone_snap_point_z(zone: int) -> float:
 	elif zone == 3:
 		return ROT_MAX_Z
 	return 0.0
+
+func is_active() -> bool:
+	if is_complete or not has_focus:
+		return false
+	return true
+
+func focus_gained() -> void:
+	has_focus = true
+
+func _on_focus_loss() -> void:
+	if is_complete:
+		return
+	
+	is_complete = true
+	has_focus = false
+	_on_mouse_exited() # force mouse exit event

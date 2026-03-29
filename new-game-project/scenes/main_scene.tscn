@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://dc5pccaqxdor1" path="res://textures/phone.webp" id="22_adb74"]
 [ext_resource type="Texture2D" uid="uid://7qcuk3iqddks" path="res://textures/phone_background.webp" id="23_58gk3"]
-[ext_resource type="Script" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
+[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.6278765), 1.6928524, 0.0, 0, 0]

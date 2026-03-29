@@ -1,7 +1,7 @@
 extends NinePatchRect
 class_name Comment
 
-const PADDING = Vector2(100, 0)
+const PADDING = Vector2(200, 0)
 const RESTRICTED_POS_START = 280 * SCREEN_SIZE_SCALE # TODO These restrictions are not implemented right now. Comments only spawn on left side
 const RESTRICTED_POS_END = 1100
 const COMMENT_LIFETIME = 5
@@ -12,8 +12,6 @@ const SCREEN_SIZE_SCALE = 14
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 var comment_text: String = ""
-
-# TODO dissapear after time
 
 func _ready() -> void:
 	if comment_text != "":
@@ -32,7 +30,6 @@ func init_comment() -> void:
 
 	self.show()
 	anim_player.play("popup")
-	print("Comment position: ", position)
 
 	var timer = Timer.new()
 	add_child(timer)

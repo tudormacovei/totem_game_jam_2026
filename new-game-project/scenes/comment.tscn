@@ -44,11 +44,10 @@ _data = {
 scale = Vector2(0.07, 0.07)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2118917405]
-visible = false
-offset_left = -3.0517578e-05
-offset_top = -3.0517578e-05
-offset_right = 1000.0
-offset_bottom = 1000.0
+offset_left = -1628.5714
+offset_top = -1757.1428
+offset_right = -628.5714
+offset_bottom = -757.1428
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 texture = ExtResource("1_uhopc")
@@ -71,6 +70,7 @@ theme_override_font_sizes/font_size = 200
 text = "TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect" unique_id=1893482373]
 root_node = NodePath("../..")
