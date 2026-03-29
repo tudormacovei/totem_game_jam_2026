@@ -28,12 +28,13 @@ var sound_effect_player: AudioStreamPlayer
 
 signal lever_completed
 
-
 func update_intensity(intensity: Intensity) -> void:
 	current_intensity = intensity
 
 
 func on_lever_completed(zone_positivity: bool, lever: Lever) -> void:
+	in_tutorial = false
+	
 	var score_multiplier: float = 0.0
 	if lever.intensity == Intensity.LOW:
 		score_multiplier = 0.0
