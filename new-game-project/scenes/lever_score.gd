@@ -3,12 +3,9 @@ class_name LeverScore extends Node3D
 @export var background_left: PackedScene
 @export var background_right: PackedScene
 @export var music: AudioStream
-<<<<<<< HEAD
 @export var left_sound: AudioStream
 @export var right_sound: AudioStream
-=======
 @export var lever_area: Lever
->>>>>>> 6c2fc69cd9c81006a9f5b63a729e62f43185fe06
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
