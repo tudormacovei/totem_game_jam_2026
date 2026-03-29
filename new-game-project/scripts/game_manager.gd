@@ -14,6 +14,8 @@ enum Intensity {
 	HIGH
 }
 
+var is_menu = true
+
 var SCORE_PER_LEVER = 1 # How many points are awarded for completing a scenario?
 var score_total := 0
 var current_intensity := Intensity.LOW
