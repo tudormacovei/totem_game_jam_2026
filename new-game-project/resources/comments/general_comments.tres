@@ -10,13 +10,13 @@ low_intensity = {
 3: ["social media sucks #imo", "ifykyk", "hello world!"]
 }
 medium_intensity = {
-1: ["We want more of this! #preach", "Can’t agree more with you! #iloveyou", "Finally some common sense!", "smhh, pull yourself together"],
-2: ["save animals' lives! #govegan", "save humans’ lives! #bbqsunday", "Hey pal, did you just blow in from stupid town?", "this guy sucks"],
-3: ["you are definitely out of touch", "next time you make a post, think twice", "don’t listen to what others say, they all suck", "your fans love you! #diehard", "screw all the haters! #myob", "animal lives matter! #humansdestroylives", "human lives matter! #screwactivists"]
+1: ["We want more of this! #preach", "Can’t agree more with you! #iloveyou", "Finally some common sense!", "smhh, pull yourself together", "boohoo sucks to be you", "does it get any lamer?", "who even does this?"],
+2: ["save animals' lives! #govegan", "save humans’ lives! #bbqsunday", "Hey pal, did you just blow in from stupid town?", "this guy sucks", "you should be shut down", "reported and blocked!!", "screw you!"],
+3: ["you are definitely out of touch", "next time you make a post, think twice", "don’t listen to what others say, they all suck", "your fans love you! #diehard", "screw all the haters! #myob", "animal lives matter! #humansdestroylives", "human lives matter! #screwactivists", "such blasphemy", "how did you become famous?!"]
 }
 high_intensity = {
 1: ["you don’t even know what you’re doing", "stop with this nonsense", "Im so sick of this stuff"],
-2: ["Did you forget to turn your brain on?", "Who gives a shit about AI? #savethebabies", "AI can go to hel?! #donttouchmywater"],
-3: ["sybau", "#gtfo", "idc and idgaf"]
+2: ["Did you forget to turn your brain on?", "Fuck AI Data Centers? #savethebabies", "sybau", "stop with this nonsense"],
+3: ["sybau", "#gtfo", "idc and idgaf", "what a shitty thing to do!", "what a stupid fcking decision", "we made the wrong person famous", "thats what we like to fcking see", "go fck yourself", "you’re our saviour!", "we’ll defend you to death!"]
 }
 metadata/_custom_type_script = "uid://c2t4f0fnhe83e"
