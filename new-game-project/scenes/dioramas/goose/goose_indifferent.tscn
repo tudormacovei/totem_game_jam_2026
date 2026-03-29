@@ -15,7 +15,10 @@ music = ExtResource("4_2ok8p")
 left_sound = ExtResource("5_joa0r")
 right_sound = ExtResource("5_joa0r")
 
-[node name="lever_sprite" parent="LeverArea3D" parent_id_path=PackedInt32Array(1641671795) index="2" unique_id=1860565248]
+[node name="LeverArea3D" parent="." index="0" unique_id=1641671795]
+intensity = 0
+
+[node name="lever_sprite" parent="LeverArea3D" index="2" unique_id=1860565248]
 texture = ExtResource("7_w1lf6")
 
 [node name="left_sprite" parent="." index="1" unique_id=1097870155]

@@ -8,3 +8,6 @@
 music = ExtResource("2_kfihl")
 left_sound = ExtResource("3_okgbf")
 right_sound = ExtResource("3_okgbf")
+
+[node name="LeverArea3D" parent="." index="0" unique_id=1641671795]
+intensity = 0
