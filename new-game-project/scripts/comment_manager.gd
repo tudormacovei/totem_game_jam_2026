@@ -1,5 +1,7 @@
 extends Node3D
 
+# Comments are organized by intensity and tier (tiers go from 1 to 3)
+
 @export var general_pool: CommentPool
 @export var cooldown_seconds := 3 # How long to wait before using a comment again
 @export var comment_rate_seconds := .5 # How often comments show up
@@ -7,12 +9,6 @@ extends Node3D
 
 @onready var ui_layer: CanvasLayer = %UILayer
 
-#TODO: Needs balancing
-var SCORE_TO_TIER_DICT := {
-	5: 1, # Tier 1: 0-5 points
-	10: 2, # Tier 2: 6-10 points
-	15: 3, # Tier 3: 11-15 points
-}
 
 var last_used := {} # Key: comment string, Value: timestamp
 
@@ -62,10 +58,7 @@ func get_general_comment(intensity: GameManager.Intensity, tier: int) -> String:
 	return chosen
 
 func _get_tier(score: int) -> int:
-	for i in SCORE_TO_TIER_DICT:
-		if score <= i:
-			return SCORE_TO_TIER_DICT[i]
-	return 3
+	return GameManager.get_tier_from_score(score)
 
 func _spawn_comment(text: String) -> void:
 	print("Spawning comment: %s" % text)

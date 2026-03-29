@@ -1,5 +1,13 @@
 extends Node
 
+# NOTE: Comment Manager expects at least 2 tiers
+var SCORE_TO_TIER_DICT := {
+	6: 1, # Tier 1 is from 0 to 6
+	12: 2, # Tier 2
+	15: 3, # Tier 3 - Value should be tied to MAX_TIER
+}
+var MAX_TIER = 3
+
 enum Intensity {
 	LOW,
 	MEDIUM,
@@ -37,7 +45,7 @@ func change_music(music: AudioStream) -> void:
 	music_player.stream = music
 	music_player.play()
 
-func play_sound(is_left : bool) -> void:
+func play_sound(is_left: bool) -> void:
 	if sound_effect_player == null:
 		sound_effect_player = AudioStreamPlayer.new()
 		add_child(sound_effect_player)
@@ -48,6 +56,12 @@ func play_sound(is_left : bool) -> void:
 
 	sound_effect_player.stream = sound
 	sound_effect_player.play()
+
+func get_tier_from_score(score: int) -> int:
+	for i in GameManager.SCORE_TO_TIER_DICT:
+		if score <= i:
+			return GameManager.SCORE_TO_TIER_DICT[i]
+	return MAX_TIER
 
 func get_current_like_amount() -> int:
 	var like_multiplier = 2.0
