@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhuypyqtgtdne" path="res://textures/speech_bubble.webp" id="1_uhopc"]
 [ext_resource type="Script" uid="uid://c1qib15akcieo" path="res://scenes/comment_rect.gd" id="2_uhopc"]
+[ext_resource type="FontFile" uid="uid://b5pq351hlc6cm" path="res://BrickSans-Bold.otf" id="3_htgmk"]
 
 [sub_resource type="Animation" id="Animation_uhopc"]
 length = 0.001
@@ -66,7 +67,8 @@ offset_bottom = 689.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
-theme_override_font_sizes/font_size = 200
+theme_override_fonts/font = ExtResource("3_htgmk")
+theme_override_font_sizes/font_size = 350
 text = "TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
