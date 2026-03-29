@@ -1,9 +1,12 @@
 extends Node
 
-@export var diorama_scenes: Array[PackedScene]
+@export var diorama_scenes_indifferent: Array[PackedScene]
+@export var diorama_scenes_medium: Array[PackedScene]
+@export var diorama_scenes_extreme: Array[PackedScene]
+
 @export var animation_profile: Curve
 
-var SCROLL_TIME = 1.0
+var SCROLL_TIME = 0.8
 var PAUSE_TIME = 10.0
 
 enum ScrollState{
@@ -49,11 +52,29 @@ func _process(delta: float) -> void:
 ## Add a diorama to the stack, at the top.
 ## Does not modify the position of current objects in the stack
 func _add_diorama() -> void:
-	if next_diorama_index >= diorama_scenes.size():
-		return
+	# SPAWN DIORAMA
 
-	var diorama_node = diorama_scenes[next_diorama_index].instantiate()
+	var diorama_node: Node3D
+	var choice_float = randf() # the higher the value the greater the change of a high chaos choice
+	if GameManager.get_current_score() > 6:
+		choice_float += randf() * 2
+	if GameManager.get_current_score() > 12:
+		choice_float += randf() * 5
+	choice_float /= 2.0 # bring back to 0.0, 1.0 range
+	print("Choice float value: " + str(choice_float))
+	if choice_float < 0.33:
+		var choice_idx = randi() % 5
+		diorama_node = diorama_scenes_indifferent[choice_idx].instantiate() as Node3D
+	elif choice_float < 0.67:
+		var choice_idx = randi() % 5
+		diorama_node = diorama_scenes_medium[choice_idx].instantiate() as Node3D
+	else:
+		var choice_idx = randi() % 5
+		diorama_node = diorama_scenes_extreme[choice_idx].instantiate() as Node3D
+		
 	add_child(diorama_node)
+	
+	# PLACE DIORAMA
 	var bottom_position = Vector3(0, diorama_scene_height, 0)
 	if loaded_dioramas.size() > 0:
 		bottom_position = loaded_dioramas[loaded_dioramas.size() - 1].global_position

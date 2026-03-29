@@ -29,6 +29,7 @@ func get_current_like_amount() -> int:
 func get_current_comment_amount() -> int:
 	return int(max(score_total, 0))
 
+# 0 -> 6: indifferent, 6->12 medium, 13+ extreme
 func get_current_score() -> int:
 	return score_total
 
