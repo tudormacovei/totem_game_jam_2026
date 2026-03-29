@@ -22,6 +22,7 @@ GameManager="*uid://cgqbk0pn6ppom"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://bs2re1ls0io1n"
 
 [dotnet]
 
