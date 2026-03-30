@@ -91,7 +91,7 @@ func _add_diorama() -> void:
 		var choice_idx = randi() % 5
 		diorama_node = diorama_scenes_medium[choice_idx].instantiate() as LeverScore
 	else:
-		var choice_idx = randi() % 5
+		var choice_idx = randi() % 6
 		diorama_node = diorama_scenes_extreme[choice_idx].instantiate() as LeverScore
 
 	add_child(diorama_node)

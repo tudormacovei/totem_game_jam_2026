@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7i0cmcxjd7wo" path="res://scenes/game start/main_scene_start.gd" id="1_6p3nn"]
 [ext_resource type="PackedScene" uid="uid://dimv7wujmv5sq" path="res://meshes/3d_ui/like_button.glb" id="1_pu3yx"]
-[ext_resource type="Script" path="res://scenes/camera_movement.gd" id="2_k67gn"]
+[ext_resource type="Script" uid="uid://dhhgoicpnjhl3" path="res://scenes/camera_movement.gd" id="2_k67gn"]
 [ext_resource type="Script" uid="uid://bppbhrue8prjt" path="res://scripts/autoscroll_movement.gd" id="2_pw63i"]
 [ext_resource type="PackedScene" uid="uid://dc3plkxdj7tkg" path="res://scenes/numeric_3d.tscn" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://c00evs34iibob" path="res://scenes/dioramas/bear/bear_indifferent.tscn" id="3_rt2n2"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://mtq4ok67ca8s" path="res://scenes/comment.tscn" id="22_58gk3"]
 [ext_resource type="Texture2D" uid="uid://5bq82pwykuyj" path="res://textures/new_phone.webp" id="23_k3g67"]
 [ext_resource type="Texture2D" uid="uid://c2tmev2lbo6wt" path="res://textures/screens/phone_background_final.webp" id="23_k67gn"]
-[ext_resource type="Script" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
+[ext_resource type="Script" uid="uid://dgc7jnxtagujo" path="res://scenes/periodic_rotation.gd" id="24_to7gp"]
 
 [sub_resource type="Curve" id="Curve_adb74"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.63953483), 0.49077323, 0.0, 0, 0]
